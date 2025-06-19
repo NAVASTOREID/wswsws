@@ -318,164 +318,64 @@
             color: var(--dark);
         }
         
-        /* Testimonials */
-        .testimonials {
-            padding: 3rem 0;
-            background-color: var(--light);
-        }
+<!-- Testimonials -->
+<section class="testimonials" id="testimonials">
+    <div class="testimonials-container">
+        <h2 class="section-title">Apa Kata Pelanggan Kami?</h2>
+        <p style="text-align: center; margin-bottom: 1rem;">Testimoni asli dari pelanggan yang sudah merasakan manfaat Thermal Tank Tops kami</p>
         
-        .testimonials-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+        <div class="testimonials-grid">
+            <!-- Testimoni cards dihapus -->
+        </div>
+    </div>
+</section>
         
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 2rem;
-        }
+<!-- Size Guide -->
+<section class="size-guide" id="size">
+    <div class="size-guide-container">
+        <h2 class="section-title">Panduan Ukuran Detail</h2>
+        <p style="text-align: center; margin-bottom: 2rem;">Pilih ukuran yang tepat untuk kenyamanan maksimal</p>
         
-        .testimonial-card {
-            background-color: var(--gray);
-            border-radius: 10px;
-            padding: 2rem;
-            position: relative;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
+        <div style="overflow-x: auto;">
+            <table style="width: 100%; border-collapse: collapse; margin: 0 auto; max-width: 800px;">
+                <thead>
+                    <tr style="background-color: #ff6b9d; color: white;">
+                        <th style="padding: 12px; text-align: left;">Ukuran</th>
+                        <th style="padding: 12px; text-align: left;">Lingkar Dada (LD)</th>
+                        <th style="padding: 12px; text-align: left;">Bisa Melar Sampai</th>
+                        <th style="padding: 12px; text-align: left;">Panjang (dari bahu)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 12px; font-weight: bold;">REGULAR SIZE (S to L)</td>
+                        <td style="padding: 12px;">70-72 cm</td>
+                        <td style="padding: 12px;">70-92 cm</td>
+                        <td style="padding: 12px;">50 cm</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 12px; font-weight: bold;">JUMBO SIZE (XL to 3X)</td>
+                        <td style="padding: 12px;">84-86 cm</td>
+                        <td style="padding: 12px;">93-110 cm</td>
+                        <td style="padding: 12px;">51 cm</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
         
-        .testimonial-card::before {
-            content: """;
-            font-size: 5rem;
-            color: var(--primary);
-            opacity: 0.2;
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            line-height: 1;
-        }
+        <div style="margin-top: 2rem; text-align: center;">
+            <img src="https://cdn.shopify.com/s/files/1/0842/0392/9883/files/spp_20231122184639_9c886ec387ae8c7dbbe2cf209b4aa6b6.jpg?v=1700650003" alt="Panduan Ukuran Thermal Tank Tops" style="max-width: 100%; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+        </div>
         
-        .testimonial-text {
-            margin-bottom: 1.5rem;
-            font-style: italic;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-        }
-        
-        .testimonial-author img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-right: 1rem;
-        }
-        
-        .author-info h4 {
-            color: var(--dark);
-            margin-bottom: 0.2rem;
-        }
-        
-        .author-info p {
-            color: var(--primary);
-            font-size: 0.9rem;
-        }
-        
-        /* Size Guide */
-        .size-guide {
-            padding: 3rem 0;
-            background-color: var(--gray);
-        }
-        
-        .size-guide-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .size-image {
-            max-width: 100%;
-            margin-top: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        /* Urgency Section */
-        .urgency {
-            padding: 3rem 0;
-            background-color: var(--primary);
-            color: var(--light);
-            text-align: center;
-        }
-        
-        .urgency-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .urgency-title {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .urgency-subtitle {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .urgency-stats {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 30px;
-            margin-bottom: 2rem;
-        }
-        
-        .stat-item {
-            background-color: rgba(255,255,255,0.1);
-            padding: 1.5rem 2rem;
-            border-radius: 10px;
-            min-width: 200px;
-        }
-        
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-        
-        .countdown {
-            font-size: 1.8rem;
-            font-weight: bold;
-            margin-bottom: 2rem;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-        
-        .countdown-item {
-            background-color: var(--light);
-            color: var(--primary);
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            min-width: 70px;
-        }
-        
-        .countdown-label {
-            font-size: 0.8rem;
-            display: block;
-            color: var(--dark);
-        }
+        <div style="margin-top: 2rem; background-color: #fff8fa; padding: 1.5rem; border-radius: 10px; border-left: 4px solid #ff6b9d;">
+            <h3 style="color: #ff6b9d; margin-bottom: 0.5rem;">Tips Memilih Ukuran:</h3>
+            <p>1. Ukur lingkar dada Anda pada bagian terlebar menggunakan pita ukur</p>
+            <p>2. Bandingkan dengan tabel ukuran di atas</p>
+            <p>3. Untuk kenyamanan maksimal, pilih ukuran yang sesuai dengan lingkar dada Anda</p>
+            <p>4. Bahan memiliki elastisitas yang baik sehingga bisa menyesuaikan bentuk tubuh</p>
+        </div>
+    </div>
+</section>
         
         /* CTA Section */
         .cta {
