@@ -3,744 +3,925 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Women's Thermal Tank Tops - Nyaman & Stylish untuk Aktivitas Sehari-hari</title>
+    <title>Mid-Length Fleece Trench Coat | Slimming & Stylish | NAVASTORE</title>
+    <meta name="description" content="Trench coat premium dengan bahan fleece cotton cashmere yang nyaman dan stylish. Dapatkan harga termurah dengan diskon 49% hari ini saja!">
+    <meta name="keywords" content="trench coat, coat wanita, jaket wanita, outer wanita, fleece coat, coat slimming">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
-            --primary: #ff6b9d;
-            --secondary: #ff8fab;
-            --dark: #333;
-            --light: #fff;
-            --gray: #f5f5f5;
-            --text: #444;
-            --sale: #e63946;
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --secondary-color: #764ba2;
+            --accent-color: #ff6b6b;
+            --text-dark: #2d3748;
+            --text-light: #f8f9fa;
+            --gray-light: #edf2f7;
+            --gray-medium: #cbd5e0;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 25px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
+
         body {
-            color: var(--text);
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-dark);
             line-height: 1.6;
             overflow-x: hidden;
+            background-color: #f9f9f9;
         }
-        
-        /* Header Styles */
-        header {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: var(--light);
-            padding: 1rem 0;
-            text-align: center;
-            position: relative;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
         }
-        
-        .header-container {
+
+        .container {
+            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        
+
+        /* Header & Navigation */
+        header {
+            background-color: white;
+            box-shadow: var(--shadow-sm);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
         .logo {
             font-size: 1.8rem;
             font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-        
-        .tagline {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            font-weight: 500;
-        }
-        
-        .discount-badge {
-            background-color: var(--light);
-            color: var(--primary);
-            padding: 0.3rem 1rem;
-            border-radius: 20px;
-            font-weight: bold;
-            display: inline-block;
-            margin-bottom: 1rem;
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-        
-        /* Navigation */
-        nav {
-            display: flex;
-            justify-content: center;
-            margin-top: 1rem;
-        }
-        
-        nav a {
-            color: var(--light);
+            color: var(--secondary-color);
             text-decoration: none;
-            margin: 0 1rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .logo span {
+            color: #667eea;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-dark);
             font-weight: 500;
-            transition: all 0.3s ease;
+            transition: var(--transition);
+            position: relative;
         }
-        
-        nav a:hover {
-            text-decoration: underline;
-            transform: translateY(-2px);
+
+        nav ul li a:hover {
+            color: var(--secondary-color);
         }
-        
+
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: var(--primary-gradient);
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            cursor: pointer;
+        }
+
         /* Hero Section */
         .hero {
-            background-color: var(--gray);
-            padding: 3rem 0;
-            text-align: center;
-        }
-        
-        .hero-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 20px;
-        }
-        
-        .hero-text {
-            flex: 1;
-            min-width: 300px;
-            padding: 1rem;
-            text-align: left;
-        }
-        
-        .hero-title {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-        
-        .hero-subtitle {
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
-            color: var(--dark);
-        }
-        
-        .hero-features {
-            list-style: none;
-            margin-bottom: 2rem;
-        }
-        
-        .hero-features li {
-            margin-bottom: 0.8rem;
+            background: var(--primary-gradient);
+            color: white;
+            padding: 150px 0 100px;
             position: relative;
-            padding-left: 30px;
-        }
-        
-        .hero-features li::before {
-            content: "✓";
-            color: var(--primary);
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-        }
-        
-        .hero-image {
-            flex: 1;
-            min-width: 300px;
-            position: relative;
-        }
-        
-        .hero-image img {
-            max-width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.5s ease;
-        }
-        
-        .hero-image img:hover {
-            transform: scale(1.03);
-        }
-        
-        /* Product Gallery */
-        .gallery {
-            padding: 3rem 0;
-            background-color: var(--light);
-        }
-        
-        .gallery-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 2rem;
-            color: var(--primary);
-            position: relative;
-        }
-        
-        .section-title::after {
-            content: "";
-            display: block;
-            width: 80px;
-            height: 3px;
-            background-color: var(--primary);
-            margin: 0.5rem auto;
-        }
-        
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 2rem;
-        }
-        
-        .gallery-item {
-            border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            position: relative;
-            cursor: pointer;
         }
-        
-        .gallery-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-        }
-        
-        .gallery-item img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            display: block;
-        }
-        
-        /* Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
+
+        .hero:before {
+            content: '';
+            position: absolute;
             top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0,0,0,0.8);
-            overflow: auto;
-            animation: fadeIn 0.3s;
+            background: url('https://cdn.orderonline.id/uploads/images_5075711737580216234.gif') no-repeat center center/cover;
+            opacity: 0.15;
+            z-index: 0;
         }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        .modal-content {
-            margin: auto;
-            display: block;
-            max-width: 90%;
-            max-height: 90%;
-            margin-top: 5vh;
-            animation: zoomIn 0.3s;
-        }
-        
-        @keyframes zoomIn {
-            from { transform: scale(0.9); }
-            to { transform: scale(1); }
-        }
-        
-        .close {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            color: var(--light);
-            font-size: 35px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .close:hover {
-            color: var(--primary);
-            transform: rotate(90deg);
-        }
-        
-        /* Features Section */
-        .features {
-            padding: 3rem 0;
-            background-color: var(--gray);
-        }
-        
-        .features-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 2rem;
-        }
-        
-        .feature-card {
-            background-color: var(--light);
-            border-radius: 10px;
-            padding: 2rem;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-        
-        .feature-icon {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-        
-        .feature-title {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: var(--dark);
-        }
-        
-        /* Testimonials */
-        .testimonials {
-            padding: 3rem 0;
-            background-color: var(--light);
-        }
-        
-        .testimonials-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 2rem;
-        }
-        
-        .testimonial-card {
-            background-color: var(--gray);
-            border-radius: 10px;
-            padding: 2rem;
-            position: relative;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-        
-        .testimonial-card::before {
-            content: """;
-            font-size: 5rem;
-            color: var(--primary);
-            opacity: 0.2;
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            line-height: 1;
-        }
-        
-        .testimonial-text {
-            margin-bottom: 1.5rem;
-            font-style: italic;
+
+        .hero-content {
             position: relative;
             z-index: 1;
-        }
-        
-        .testimonial-author {
             display: flex;
             align-items: center;
+            justify-content: space-between;
         }
-        
-        .testimonial-author img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-right: 1rem;
+
+        .hero-text {
+            flex: 1;
+            padding-right: 50px;
         }
-        
-        .author-info h4 {
-            color: var(--dark);
-            margin-bottom: 0.2rem;
+
+        .hero-image {
+            flex: 1;
+            position: relative;
+            animation: float 6s ease-in-out infinite;
         }
-        
-        .author-info p {
-            color: var(--primary);
-            font-size: 0.9rem;
-        }
-        
-        /* Size Guide */
-        .size-guide {
-            padding: 3rem 0;
-            background-color: var(--gray);
-        }
-        
-        .size-guide-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .size-image {
-            max-width: 100%;
-            margin-top: 2rem;
+
+        .hero-image img {
+            width: 100%;
+            max-width: 500px;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow-lg);
         }
-        
-        /* Urgency Section */
-        .urgency {
-            padding: 3rem 0;
-            background-color: var(--primary);
-            color: var(--light);
-            text-align: center;
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
         }
-        
-        .urgency-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .urgency-title {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .urgency-subtitle {
+
+        .hero p {
             font-size: 1.2rem;
-            margin-bottom: 2rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
+            margin-bottom: 30px;
+            max-width: 600px;
         }
-        
-        .urgency-stats {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 30px;
-            margin-bottom: 2rem;
-        }
-        
-        .stat-item {
-            background-color: rgba(255,255,255,0.1);
-            padding: 1.5rem 2rem;
-            border-radius: 10px;
-            min-width: 200px;
-        }
-        
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-        
-        .countdown {
-            font-size: 1.8rem;
-            font-weight: bold;
-            margin-bottom: 2rem;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-        
-        .countdown-item {
-            background-color: var(--light);
-            color: var(--primary);
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            min-width: 70px;
-        }
-        
-        .countdown-label {
-            font-size: 0.8rem;
-            display: block;
-            color: var(--dark);
-        }
-        
-        /* CTA Section */
-        .cta {
-            padding: 3rem 0;
-            background-color: var(--light);
-            text-align: center;
-        }
-        
-        .cta-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .cta-box {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: var(--light);
-            padding: 3rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .cta-box::before {
-            content: "";
-            position: absolute;
-            top: -50px;
-            right: -50px;
-            width: 150px;
-            height: 150px;
-            background-color: rgba(255,255,255,0.1);
-            border-radius: 50%;
-        }
-        
-        .cta-box::after {
-            content: "";
-            position: absolute;
-            bottom: -30px;
-            left: -30px;
-            width: 100px;
-            height: 100px;
-            background-color: rgba(255,255,255,0.1);
-            border-radius: 50%;
-        }
-        
-        .cta-title {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .cta-subtitle {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            position: relative;
-            z-index: 1;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
+
         .price {
             display: flex;
-            justify-content: center;
             align-items: center;
-            gap: 20px;
-            margin-bottom: 2rem;
-            position: relative;
-            z-index: 1;
+            margin-bottom: 30px;
         }
-        
+
         .current-price {
             font-size: 2.5rem;
-            font-weight: bold;
+            font-weight: 700;
+            margin-right: 20px;
         }
-        
+
         .original-price {
             font-size: 1.5rem;
             text-decoration: line-through;
             opacity: 0.7;
         }
-        
+
+        .discount-badge {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-weight: 700;
+            margin-left: 20px;
+            font-size: 1rem;
+        }
+
         .btn {
             display: inline-block;
-            background-color: var(--light);
-            color: var(--primary);
-            padding: 1rem 2.5rem;
+            padding: 15px 30px;
             border-radius: 50px;
-            font-size: 1.2rem;
-            font-weight: bold;
+            font-weight: 600;
             text-decoration: none;
-            transition: all 0.3s ease;
-            border: none;
+            transition: var(--transition);
             cursor: pointer;
-            position: relative;
-            z-index: 1;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-            background-color: var(--light);
-            color: var(--primary);
-        }
-        
-        .btn-large {
-            font-size: 1.3rem;
-            padding: 1.2rem 3rem;
-        }
-        
-        .payment-methods {
-            margin-top: 2rem;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-        
-        .payment-method {
-            background-color: var(--light);
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.9rem;
-            color: var(--dark);
-        }
-        
-        .payment-method img {
-            height: 20px;
-        }
-        
-        /* Guarantee */
-        .guarantee {
-            padding: 2rem 0;
-            background-color: var(--gray);
             text-align: center;
         }
-        
-        .guarantee-container {
-            max-width: 1200px;
+
+        .btn-primary {
+            background-color: white;
+            color: var(--secondary-color);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+            margin-left: 15px;
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+
+        .countdown {
+            display: flex;
+            margin-top: 30px;
+            background-color: rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 10px;
+            max-width: 500px;
+        }
+
+        .countdown-item {
+            text-align: center;
+            margin: 0 10px;
+        }
+
+        .countdown-number {
+            font-size: 2rem;
+            font-weight: 700;
+            background: white;
+            color: var(--secondary-color);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 5px;
+        }
+
+        .countdown-label {
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+
+        /* Features Section */
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--primary-gradient);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+        }
+
+        /* Product Gallery */
+        .product-gallery {
+            background-color: var(--gray-light);
+        }
+
+        .gallery-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .main-image {
+            flex: 1;
+            min-width: 300px;
+            max-width: 600px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .main-image img {
+            width: 100%;
+            height: auto;
+            transition: var(--transition);
+            cursor: zoom-in;
+        }
+
+        .thumbnail-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+            justify-content: center;
+        }
+
+        .thumbnail {
+            width: 80px;
+            height: 80px;
+            border-radius: 5px;
+            overflow: hidden;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: var(--transition);
+        }
+
+        .thumbnail:hover, .thumbnail.active {
+            border-color: var(--secondary-color);
+        }
+
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-details {
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .color-options {
+            display: flex;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .color-option {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .color-option:hover, .color-option.selected {
+            border-color: var(--text-dark);
+        }
+
+        .color-option.tooltip:after {
+            content: attr(data-color);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--text-dark);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            opacity: 0;
+            transition: var(--transition);
+            pointer-events: none;
+            white-space: nowrap;
+        }
+
+        .color-option.tooltip:hover:after {
+            opacity: 1;
+            bottom: calc(100% + 5px);
+        }
+
+        .size-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .size-option {
+            padding: 8px 15px;
+            border: 1px solid var(--gray-medium);
+            border-radius: 5px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .size-option:hover, .size-option.selected {
+            background: var(--secondary-color);
+            color: white;
+            border-color: var(--secondary-color);
+        }
+
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .quantity-btn {
+            width: 40px;
+            height: 40px;
+            background: var(--gray-light);
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .quantity-input {
+            width: 60px;
+            height: 40px;
+            text-align: center;
+            border: 1px solid var(--gray-light);
+            font-size: 1rem;
+            margin: 0 5px;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: white;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: var(--gray-light);
+            padding: 30px;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .testimonial-card:before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 4rem;
+            color: rgba(0,0,0,0.1);
+            font-family: serif;
+            line-height: 1;
+        }
+
+        .testimonial-content {
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        .rating {
+            color: #ffc107;
+            margin-bottom: 10px;
+        }
+
+        /* FAQ */
+        .faq {
+            background: var(--gray-light);
+        }
+
+        .accordion {
+            max-width: 800px;
             margin: 0 auto;
+        }
+
+        .accordion-item {
+            margin-bottom: 15px;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .accordion-header {
+            padding: 20px;
+            background: white;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .accordion-header:hover {
+            background: #f8f9fa;
+        }
+
+        .accordion-content {
             padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .accordion-item.active .accordion-content {
+            padding: 0 20px 20px;
+            max-height: 500px;
+        }
+
+        .accordion-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-item.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--primary-gradient);
+            color: white;
+            text-align: center;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://cdn.orderonline.id/uploads/images_3756551737580291135.gif') no-repeat center center/cover;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Guarantee Section */
+        .guarantee {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 30px;
+            margin-top: 50px;
         }
-        
+
         .guarantee-item {
             display: flex;
             align-items: center;
-            gap: 15px;
             max-width: 300px;
-            text-align: left;
         }
-        
+
         .guarantee-icon {
             font-size: 2rem;
-            color: var(--primary);
+            color: var(--secondary-color);
+            margin-right: 15px;
         }
-        
+
         /* Footer */
         footer {
-            background-color: var(--dark);
-            color: var(--light);
-            padding: 2rem 0;
-            text-align: center;
+            background: var(--text-dark);
+            color: white;
+            padding: 60px 0 20px;
         }
-        
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
         }
-        
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-bottom: 1.5rem;
+
+        .footer-column h3 {
+            color: white;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
         }
-        
-        .footer-links a {
-            color: var(--light);
+
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--secondary-color);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: var(--gray-medium);
             text-decoration: none;
-            transition: all 0.3s;
+            transition: var(--transition);
         }
-        
-        .footer-links a:hover {
-            color: var(--primary);
+
+        .footer-column ul li a:hover {
+            color: white;
+            padding-left: 5px;
         }
-        
-        .copyright {
-            opacity: 0.7;
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
             font-size: 0.9rem;
+            color: var(--gray-medium);
         }
-        
+
         /* Floating CTA */
         .floating-cta {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: var(--light);
-            padding: 1rem 1.5rem;
-            border-radius: 50px;
-            font-weight: bold;
-            text-decoration: none;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            bottom: 30px;
+            right: 30px;
             z-index: 999;
             display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .floating-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
             align-items: center;
-            gap: 10px;
-            transform: translateY(100px);
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .floating-btn.whatsapp {
+            background: #25D366;
+        }
+
+        .floating-btn.cart {
+            background: var(--secondary-color);
+        }
+
+        .floating-btn:hover {
+            transform: translateY(-5px) scale(1.1);
+        }
+
+        .floating-btn .badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: var(--accent-color);
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 700;
+        }
+
+        /* Modal */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
             opacity: 0;
-            transition: all 0.5s ease;
+            pointer-events: none;
+            transition: var(--transition);
         }
-        
-        .floating-cta.show {
-            transform: translateY(0);
+
+        .modal.active {
             opacity: 1;
+            pointer-events: all;
         }
-        
-        .floating-price {
-            background-color: var(--light);
-            color: var(--primary);
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
+
+        .modal-content {
+            background: white;
+            border-radius: 10px;
+            max-width: 800px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            transform: translateY(50px);
+            transition: all 0.3s ease;
         }
-        
+
+        .modal.active .modal-content {
+            transform: translateY(0);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-dark);
+        }
+
+        .modal-body {
+            padding: 30px;
+        }
+
         /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
+            }
+            
+            .hero-text {
+                padding-right: 0;
+                margin-bottom: 50px;
+                text-align: center;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+
         @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2rem;
+            nav ul {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                box-shadow: var(--shadow-md);
+                transform: translateY(-150%);
+                transition: var(--transition);
+                z-index: 999;
             }
             
-            .hero-subtitle {
-                font-size: 1.1rem;
+            nav ul.active {
+                transform: translateY(0);
             }
             
-            .section-title {
-                font-size: 1.8rem;
+            nav ul li {
+                margin: 15px 0;
             }
             
-            .urgency-title {
-                font-size: 1.8rem;
+            .mobile-menu-btn {
+                display: block;
             }
             
-            .urgency-subtitle {
-                font-size: 1.1rem;
+            .hero {
+                padding: 120px 0 80px;
             }
             
-            .cta-title {
-                font-size: 1.8rem;
+            .hero h1 {
+                font-size: 2.2rem;
             }
             
-            .cta-subtitle {
-                font-size: 1.1rem;
+            .hero p {
+                font-size: 1rem;
             }
             
             .current-price {
@@ -748,460 +929,629 @@
             }
             
             .original-price {
-                font-size: 1.3rem;
+                font-size: 1.2rem;
+            }
+            
+            .btn {
+                padding: 12px 25px;
+            }
+            
+            .section {
+                padding: 70px 0;
             }
             
             .countdown {
+                max-width: 100%;
+            }
+            
+            .countdown-number {
+                width: 50px;
+                height: 50px;
                 font-size: 1.5rem;
-            }
-            
-            .countdown-item {
-                min-width: 60px;
-            }
-            
-            .cta-box {
-                padding: 2rem 1.5rem;
             }
         }
-        
-        @media (max-width: 480px) {
-            .logo {
-                font-size: 1.5rem;
-            }
-            
-            .tagline {
-                font-size: 1rem;
-            }
-            
-            .hero-title {
+
+        @media (max-width: 576px) {
+            .hero h1 {
                 font-size: 1.8rem;
             }
             
-            .section-title {
-                font-size: 1.6rem;
+            .price {
+                flex-direction: column;
+                align-items: flex-start;
             }
             
-            .urgency-title {
-                font-size: 1.6rem;
+            .discount-badge {
+                margin-left: 0;
+                margin-top: 10px;
             }
             
-            .stat-item {
-                min-width: 150px;
-                padding: 1rem 1.5rem;
+            .hero-buttons {
+                flex-direction: column;
+                gap: 15px;
             }
             
-            .stat-number {
-                font-size: 2rem;
+            .btn-secondary {
+                margin-left: 0;
             }
             
             .countdown {
-                font-size: 1.3rem;
-                gap: 10px;
+                flex-wrap: wrap;
+                justify-content: center;
             }
             
             .countdown-item {
-                min-width: 50px;
-                padding: 0.3rem 0.6rem;
+                margin: 5px;
             }
             
             .floating-cta {
-                left: 20px;
-                right: 20px;
-                justify-content: center;
+                bottom: 15px;
+                right: 15px;
             }
+            
+            .floating-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Utility Classes */
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-1 { margin-top: 10px; }
+        .mt-2 { margin-top: 20px; }
+        .mt-3 { margin-top: 30px; }
+        .mt-4 { margin-top: 40px; }
+        .mt-5 { margin-top: 50px; }
+
+        .mb-1 { margin-bottom: 10px; }
+        .mb-2 { margin-bottom: 20px; }
+        .mb-3 { margin-bottom: 30px; }
+        .mb-4 { margin-bottom: 40px; }
+        .mb-5 { margin-bottom: 50px; }
+
+        .sticky {
+            position: sticky;
+            top: 20px;
         }
     </style>
 </head>
 <body>
     <!-- Header -->
     <header>
-        <div class="header-container">
-            <div class="logo">ThermalTops</div>
-            <div class="tagline">Nyaman, Stylish, dan Hangat untuk Setiap Momen</div>
-            <div class="discount-badge">DISKON 49% HARI INI SAJA!</div>
+        <div class="container header-inner">
+            <a href="#" class="logo">NAVA<span>STORE</span></a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
             <nav>
-                <a href="#features">Keunggulan</a>
-                <a href="#gallery">Galeri</a>
-                <a href="#testimonials">Testimoni</a>
-                <a href="#size">Ukuran</a>
+                <ul id="mainMenu">
+                    <li><a href="#features">Keunggulan</a></li>
+                    <li><a href="#gallery">Galeri</a></li>
+                    <li><a href="#testimonials">Testimoni</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#order" class="btn btn-primary">Pesan Sekarang</a></li>
+                </ul>
             </nav>
         </div>
     </header>
-    
+
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-container">
+        <div class="container hero-content">
             <div class="hero-text">
-                <h1 class="hero-title">Women's Thermal Tank Tops</h1>
-                <p class="hero-subtitle">Tank top dengan bahan thermal khusus yang memberikan kehangatan ekstra tanpa mengurangi gaya dan kenyamanan Anda.</p>
-                <ul class="hero-features">
-                    <li>Bahan thermal khusus untuk kehangatan optimal</li>
-                    <li>Desain stylish dengan built-in bra</li>
-                    <li>Nyaman dipakai seharian</li>
-                    <li>Cocok untuk berbagai aktivitas</li>
-                    <li>Tersedia dalam berbagai ukuran</li>
-                </ul>
-                <div class="countdown" id="countdown">
+                <h1>Mid-Length Fleece Trench Coat</h1>
+                <p>Trench coat premium dengan bahan fleece cotton cashmere yang nyaman dan stylish. Tampil elegan dengan harga termurah!</p>
+                
+                <div class="price">
+                    <div class="current-price">Rp 185.000</div>
+                    <div class="original-price">Rp 362.000</div>
+                    <div class="discount-badge">DISKON 49%</div>
+                </div>
+                
+                <div class="hero-buttons">
+                    <a href="https://nava.orderonline.id/mid-length-fleece-trench-coat" class="btn btn-primary pulse">Pesan Sekarang</a>
+                    <a href="#gallery" class="btn btn-secondary">Lihat Detail</a>
+                </div>
+                
+                <div class="countdown">
                     <div class="countdown-item">
-                        <span id="hours">00</span>
-                        <span class="countdown-label">Jam</span>
+                        <div class="countdown-number" id="countdown-hours">00</div>
+                        <div class="countdown-label">Jam</div>
                     </div>
                     <div class="countdown-item">
-                        <span id="minutes">00</span>
-                        <span class="countdown-label">Menit</span>
+                        <div class="countdown-number" id="countdown-minutes">00</div>
+                        <div class="countdown-label">Menit</div>
                     </div>
                     <div class="countdown-item">
-                        <span id="seconds">00</span>
-                        <span class="countdown-label">Detik</span>
+                        <div class="countdown-number" id="countdown-seconds">00</div>
+                        <div class="countdown-label">Detik</div>
                     </div>
                 </div>
-                <a href="https://nava.orderonline.id/womens-thermal-tank-tops" class="btn btn-large">BELI SEKARANG</a>
+                
+                <p><i class="fas fa-exclamation-circle"></i> Promo berakhir dalam <strong>24 jam</strong> | Stok tersisa: <strong>12 pcs</strong></p>
             </div>
-            <div class="hero-image">
-                <img src="https://welfareis.com/cdn/shop/files/iwEcAqNwbmcDAQTRAkYF0QJIBrBa_kJuzPAD8wcHNllcvR4DB9IcUPZZCAAJomltCgAL0gAHWBA.png_720x720q90.jpg?v=1730173528&width=493" alt="Women's Thermal Tank Tops">
-            </div>
-        </div>
-    </section>
-    
-    <!-- Product Gallery -->
-    <section class="gallery" id="gallery">
-        <div class="gallery-container">
-            <h2 class="section-title">Galeri Produk</h2>
-            <p style="text-align: center; margin-bottom: 1rem;">Lihat bagaimana Women's Thermal Tank Tops kami dapat meningkatkan gaya dan kenyamanan Anda</p>
             
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="https://welfareis.com/cdn/shop/files/iwEeAqNwbmcDAQTRAkEF0QJEBrARumBj8CWwsQcHNllcvR4AB9IcUPZZCAAJomltCgAL0gAHIwk.png_720x720q90.jpg?v=1730173528&width=493" alt="Thermal Tank Tops - Tampak Depan">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://cdn.shopify.com/s/files/1/0842/0392/9883/files/spp_20231122184645_6b8f4b7400cf53b4de6b6ad5736a4cff.jpg?v=1700650009" alt="Thermal Tank Tops - Detail Bahan">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://cdn.shopify.com/s/files/1/0842/0392/9883/files/spp_20231122184655_607931d194785888c7f17849618de2fb.jpg?v=1700650020" alt="Thermal Tank Tops - Warna Lain">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://cdn.shopify.com/s/files/1/0842/0392/9883/files/spp_20231122184702_d098ffde5c4118ad021caea02a18cf2f.jpg?v=1700650026" alt="Thermal Tank Tops - Tampak Belakang">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://cdn.shopify.com/s/files/1/0842/0392/9883/files/spp_20231122184708_c17875b4bebe9b32f4e4b371204deb59.jpg?v=1700650032" alt="Thermal Tank Tops - Kombinasi Outfit">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://welfareis.com/cdn/shop/files/iwEdAqNwbmcDAQTRAkYF0QJFBrC5t1VVb91xuQcHNllcvR4CB9IcUPZZCAAJomltCgAL0gAE5qQ.png_720x720q90.jpg?v=1730173528&width=493" alt="Thermal Tank Tops - Variasi Warna">
-                </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Mid-Length Fleece Trench Coat" class="fade-in">
             </div>
         </div>
     </section>
-    
-    <!-- Modal for Gallery -->
-    <div id="galleryModal" class="modal">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="modalImage">
-    </div>
-    
+
     <!-- Features Section -->
-    <section class="features" id="features">
-        <div class="features-container">
-            <h2 class="section-title">Keunggulan Produk</h2>
-            <p style="text-align: center; margin-bottom: 1rem;">Mengapa Women's Thermal Tank Tops kami menjadi pilihan terbaik Anda</p>
+    <section class="section" id="features">
+        <div class="container">
+            <h2 class="section-title">Keunggulan Produk Kami</h2>
             
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-tshirt"></i>
                     </div>
-                    <h3 class="feature-title">Bahan Thermal Berkualitas</h3>
-                    <p>Dibuat dari bahan khusus yang memberikan kehangatan optimal tanpa membuat gerah, cocok untuk cuaca dingin maupun AC.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-heart"></i>
-                    </div>
-                    <h3 class="feature-title">Built-in Bra Nyaman</h3>
-                    <p>Desain praktis dengan built-in bra yang memberikan support maksimal tanpa perlu memakai bra tambahan.</p>
+                    <h3>Material Premium</h3>
+                    <p>Terbuat dari bahan cotton dan cashmere berkualitas tinggi yang nyaman dipakai seharian.</p>
                 </div>
                 
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-magic"></i>
                     </div>
-                    <h3 class="feature-title">Desain Stylish</h3>
-                    <p>Potongan yang modis dan warna-warna netral membuatnya mudah dipadukan dengan berbagai outfit.</p>
+                    <h3>Efek Slimming</h3>
+                    <p>Desain yang menyesuaikan bentuk tubuh untuk tampilan lebih ramping dan elegan.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3>3 Pilihan Warna</h3>
+                        <p>Tersedia dalam warna Gray, Coffee, dan Black yang cocok untuk berbagai kesempatan.</p>
+                    </div>
                 </div>
                 
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-bolt"></i>
+                        <i class="fas fa-ruler-combined"></i>
                     </div>
-                    <h3 class="feature-title">Multi-fungsi</h3>
-                    <p>Cocok untuk berbagai aktivitas: tidur, olahraga ringan, atau sebagai inner wear sehari-hari.</p>
+                    <h3>Ukuran Lengkap</h3>
+                    <p>Dari size M hingga 4XL, cocok untuk berbagai bentuk tubuh.</p>
                 </div>
                 
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-leaf"></i>
+                        <i class="fas fa-tags"></i>
                     </div>
-                    <h3 class="feature-title">Ramah Kulit</h3>
-                    <p>Bahan lembut dan tidak menyebabkan iritasi, aman untuk kulit sensitif sekalipun.</p>
+                    <h3>Harga Terbaik</h3>
+                    <p>Kualitas premium dengan harga termurah di pasaran, diskon 49% hari ini!</p>
                 </div>
                 
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
+                        <i class="fas fa-truck"></i>
                     </div>
-                    <h3 class="feature-title">Tahan Lama</h3>
-                    <p>Kualitas jahitan premium dan bahan yang tidak mudah melar, tahan hingga bertahun-tahun.</p>
+                    <h3>Gratis Ongkir</h3>
+                    <p>Gratis ongkos kirim ke seluruh Indonesia untuk pembelian hari ini.</p>
                 </div>
             </div>
         </div>
     </section>
-    
+
+    <!-- Product Gallery -->
+    <section class="section product-gallery" id="gallery">
+        <div class="container">
+            <h2 class="section-title">Galeri Produk</h2>
+            
+            <div class="gallery-container">
+                <div class="main-image">
+                    <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Mid-Length Fleece Trench Coat" id="mainProductImage">
+                </div>
+                
+                <div class="product-details">
+                    <h3>Mid-Length Fleece Trench Coat</h3>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>(128 reviews)</span>
+                    </div>
+                    
+                    <div class="price">
+                        <div class="current-price">Rp 185.000</div>
+                        <div class="original-price">Rp 362.000</div>
+                    </div>
+                    
+                    <p>PRODUCT NAME: SLIMMING TRENCH COAT<br>
+                    MATERIAL: COTTON, CASHMERE<br>
+                    COLOR: GRAY, COFFEE, BLACK<br>
+                    SIZE: M~4XL</p>
+                    
+                    <h4>Pilih Warna:</h4>
+                    <div class="color-options">
+                        <div class="color-option tooltip selected" style="background-color: #808080;" data-color="Gray" onclick="selectColor(this, 'gray')"></div>
+                        <div class="color-option tooltip" style="background-color: #6F4E37;" data-color="Coffee" onclick="selectColor(this, 'coffee')"></div>
+                        <div class="color-option tooltip" style="background-color: #000000;" data-color="Black" onclick="selectColor(this, 'black')"></div>
+                    </div>
+                    
+                    <h4>Pilih Ukuran:</h4>
+                    <div class="size-options">
+                        <div class="size-option" onclick="selectSize(this)">M</div>
+                        <div class="size-option" onclick="selectSize(this)">L</div>
+                        <div class="size-option selected" onclick="selectSize(this)">XL</div>
+                        <div class="size-option" onclick="selectSize(this)">2XL</div>
+                        <div class="size-option" onclick="selectSize(this)">3XL</div>
+                        <div class="size-option" onclick="selectSize(this)">4XL</div>
+                    </div>
+                    
+                    <h4>Jumlah:</h4>
+                    <div class="quantity-selector">
+                        <button class="quantity-btn" onclick="changeQuantity(-1)">-</button>
+                        <input type="number" class="quantity-input" value="1" min="1" max="10">
+                        <button class="quantity-btn" onclick="changeQuantity(1)">+</button>
+                    </div>
+                    
+                    <a href="https://nava.orderonline.id/mid-length-fleece-trench-coat" class="btn btn-primary" style="display: block; text-align: center; margin-top: 30px;">Pesan Sekarang</a>
+                    
+                    <div class="guarantee mt-3">
+                        <div class="guarantee-item">
+                            <div class="guarantee-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div>
+                                <h5>Garansi 100%</h5>
+                                <p>Uang kembali jika tidak sesuai</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="thumbnail-container">
+                <div class="thumbnail active" onclick="changeMainImage('https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80', this)">
+                    <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Trench Coat Front View">
+                </div>
+                <div class="thumbnail" onclick="changeMainImage('https://images.unsplash.com/photo-1551232864-3f0890e580d9?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80', this)">
+                    <img src="https://images.unsplash.com/photo-1551232864-3f0890e580d9?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Trench Coat Side View">
+                </div>
+                <div class="thumbnail" onclick="changeMainImage('https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80', this)">
+                    <img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Trench Coat Back View">
+                </div>
+                <div class="thumbnail" onclick="changeMainImage('https://images.unsplash.com/photo-1539533018447-63fcce2678e4?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80', this)">
+                    <img src="https://images.unsplash.com/photo-1539533018447-63fcce2678e4?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Trench Coat Detail">
+                </div>
+                <div class="thumbnail" onclick="changeMainImage('https://images.unsplash.com/photo-1554412933-514a83d2f3c8?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80', this)">
+                    <img src="https://images.unsplash.com/photo-1554412933-514a83d2f3c8?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Trench Coat Material">
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Testimonials -->
-    <section class="testimonials" id="testimonials">
-        <div class="testimonials-container">
+    <section class="section testimonials" id="testimonials">
+        <div class="container">
             <h2 class="section-title">Apa Kata Pelanggan Kami?</h2>
-            <p style="text-align: center; margin-bottom: 1rem;">Testimoni asli dari pelanggan yang sudah merasakan manfaat Thermal Tank Tops kami</p>
             
-            <div class="testimonials-grid">
+            <div class="testimonial-grid">
                 <div class="testimonial-card">
-                    <p class="testimonial-text">"Saya sangat puas dengan tank top ini! Bahan thermalnya benar-benar hangat tapi tidak gerah. Built-in branya juga nyaman dan memberikan support yang cukup. Sudah beli 3 warna berbeda!"</p>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"Trench coat ini sangat nyaman dipakai dan bahannya premium. Desainnya benar-benar membuat saya terlihat lebih ramping. Worth it banget untuk harganya!"</p>
+                    </div>
                     <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Diana Putri">
+                        </div>
                         <div class="author-info">
-                            <h4>Dewi L.</h4>
-                            <p>Pembeli Terverifikasi</p>
+                            <h4>Diana Putri</h4>
+                            <p>Jakarta</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="testimonial-card">
-                    <p class="testimonial-text">"Akhirnya menemukan tank top yang nyaman untuk dipakai sehari-hari. Desainnya simple tapi stylish, cocok dipadukan dengan jaket atau cardigan. Bahannya juga lembut di kulit."</p>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"Saya sudah mencari trench coat seperti ini lama sekali. Bahannya lembut tapi tetap hangat, dan yang paling penting bentuknya sangat flattering. Pengiriman juga cepat!"</p>
+                    </div>
                     <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Rina Wijaya">
+                        </div>
                         <div class="author-info">
-                            <h4>Rina S.</h4>
-                            <p>Pembeli Terverifikasi</p>
+                            <h4>Rina Wijaya</h4>
+                            <p>Bandung</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="testimonial-card">
-                    <p class="testimonial-text">"Saya sering kedinginan di kantor karena AC-nya dingin. Sejak pakai Thermal Tank Tops ini, badan tetap hangat tapi tidak berkeringat. Sangat worth it untuk harganya!"</p>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"Produknya sesuai dengan gambar, bahannya bagus dan jahitannya rapi. Ukurannya juga pas. Saya beli warna hitam dan abu-abu, keduanya sama-sama bagus."</p>
+                    </div>
                     <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Siti Rahma">
+                        </div>
                         <div class="author-info">
-                            <h4>Maya W.</h4>
-                            <p>Pembeli Terverifikasi</p>
+                            <h4>Siti Rahma</h4>
+                            <p>Surabaya</p>
                         </div>
                     </div>
                 </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <a href="https://nava.orderonline.id/mid-length-fleece-trench-coat" class="btn btn-primary">Beli Sekarang</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section faq" id="faq">
+        <div class="container">
+            <h2 class="section-title">Pertanyaan yang Sering Diajukan</h2>
+            
+            <div class="accordion">
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>Bagaimana kualitas bahan trench coat ini?</span>
+                        <i class="fas fa-chevron-down accordion-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Trench coat ini terbuat dari bahan cotton dan cashmere premium yang sangat nyaman dipakai. Bahan ini memiliki tekstur yang lembut, hangat, dan memiliki efek slimming yang membuat penampilan Anda lebih elegan.</p>
+                    </div>
+                </div>
                 
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"Produknya sesuai deskripsi, bahannya premium dan jahitannya rapi. Ukurannya pas di badan (saya pakai M). Pengiriman cepat dan packing rapi. Akan beli lagi warna lainnya!"</p>
-                    <div class="testimonial-author">
-                        <div class="author-info">
-                            <h4>Siti K.</h4>
-                            <p>Pembeli Terverifikasi</p>
-                        </div>
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>Apakah ukurannya sesuai dengan yang tertera?</span>
+                        <i class="fas fa-chevron-down accordion-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Ya, ukuran produk kami sesuai dengan deskripsi. Kami menyediakan panduan ukuran yang detail untuk membantu Anda memilih ukuran yang tepat. Jika ragu, Anda bisa menghubungi customer service kami untuk konsultasi ukuran.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>Berapa lama waktu pengiriman?</span>
+                        <i class="fas fa-chevron-down accordion-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Waktu pengiriman bervariasi tergantung lokasi Anda. Untuk wilayah Jabodetabek biasanya 1-3 hari kerja, luar Jawa 3-7 hari kerja, dan wilayah Indonesia Timur 5-10 hari kerja. Kami menggunakan jasa pengiriman terpercaya untuk memastikan produk sampai dengan aman.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>Apakah ada garansi untuk produk ini?</span>
+                        <i class="fas fa-chevron-down accordion-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Kami memberikan garansi 100% kepuasan pelanggan. Jika produk tidak sesuai dengan deskripsi atau ada cacat produksi, Anda bisa mengembalikan produk dalam waktu 7 hari setelah penerimaan untuk penggantian atau pengembalian dana.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>Bagaimana cara perawatannya?</span>
+                        <i class="fas fa-chevron-down accordion-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Untuk perawatan, kami rekomendasikan dry clean atau cuci tangan dengan air dingin dan deterjen lembut. Jangan menggunakan pemutih. Setelah dicuci, jemur di tempat teduh dan hindari setrika langsung pada suhu tinggi.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
-   <!-- Size Guide -->
-<section class="size-guide" id="size">
-    <div class="size-guide-container">
-        <h2 class="section-title">Panduan Ukuran Detail</h2>
-        <p style="text-align: center; margin-bottom: 2rem;">Pilih ukuran yang tepat untuk kenyamanan maksimal</p>
-        
-        <div style="overflow-x: auto;">
-            <table style="width: 100%; border-collapse: collapse; margin: 0 auto; max-width: 800px;">
-                <thead>
-                    <tr style="background-color: #ff6b9d; color: white;">
-                        <th style="padding: 12px; text-align: left;">Ukuran</th>
-                        <th style="padding: 12px; text-align: left;">Lingkar Dada (LD)</th>
-                        <th style="padding: 12px; text-align: left;">Bisa Melar Sampai</th>
-                        <th style="padding: 12px; text-align: left;">Panjang (dari bahu)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr style="border-bottom: 1px solid #ddd;">
-                        <td style="padding: 12px; font-weight: bold;">REGULAR SIZE (S to L)</td>
-                        <td style="padding: 12px;">70-72 cm</td>
-                        <td style="padding: 12px;">70-92 cm</td>
-                        <td style="padding: 12px;">50 cm</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid #ddd;">
-                        <td style="padding: 12px; font-weight: bold;">JUMBO SIZE (XL to 3X)</td>
-                        <td style="padding: 12px;">84-86 cm</td>
-                        <td style="padding: 12px;">93-110 cm</td>
-                        <td style="padding: 12px;">51 cm</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        
-        <div style="margin-top: 2rem; text-align: center;">
-            <img src="https://cdn.shopify.com/s/files/1/0842/0392/9883/files/spp_20231122184639_9c886ec387ae8c7dbbe2cf209b4aa6b6.jpg?v=1700650003" alt="Panduan Ukuran Thermal Tank Tops" style="max-width: 100%; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-        </div>
-        
-        <div style="margin-top: 2rem; background-color: #fff8fa; padding: 1.5rem; border-radius: 10px; border-left: 4px solid #ff6b9d;">
-            <h3 style="color: #ff6b9d; margin-bottom: 0.5rem;">Tips Memilih Ukuran:</h3>
-            <p>1. Ukur lingkar dada Anda pada bagian terlebar menggunakan pita ukur</p>
-            <p>2. Bandingkan dengan tabel ukuran di atas</p>
-            <p>3. Untuk kenyamanan maksimal, pilih ukuran yang sesuai dengan lingkar dada Anda</p>
-            <p>4. Bahan memiliki elastisitas yang baik sehingga bisa menyesuaikan bentuk tubuh</p>
-        </div>
-    </div>
-</section>
-    
-    <!-- Urgency Section -->
-    <section class="urgency">
-        <div class="urgency-container">
-            <h2 class="urgency-title">PROMO TERBATAS!</h2>
-            <p class="urgency-subtitle">Diskon 49% hanya berlaku untuk 100 pembeli pertama hari ini. Jangan lewatkan kesempatan ini!</p>
-            
-            <div class="urgency-stats">
-                <div class="stat-item">
-                    <div class="stat-number" id="viewer-count">1,243</div>
-                    <div>Orang sedang melihat produk ini</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number" id="sold-count">897</div>
-                    <div>Terjual dalam 24 jam terakhir</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number" id="stock-count">103</div>
-                    <div>Stok tersisa</div>
-                </div>
-            </div>
-            
-            <div class="countdown">
-                <div class="countdown-item">
-                    <span id="urgency-hours">00</span>
-                    <span class="countdown-label">Jam</span>
-                </div>
-                <div class="countdown-item">
-                    <span id="urgency-minutes">00</span>
-                    <span class="countdown-label">Menit</span>
-                </div>
-                <div class="countdown-item">
-                    <span id="urgency-seconds">00</span>
-                    <span class="countdown-label">Detik</span>
-                </div>
-            </div>
-            
-            <a href="https://nava.orderonline.id/womens-thermal-tank-tops" class="btn btn-large">PESAN SEKARANG</a>
-        </div>
-    </section>
-    
+
     <!-- CTA Section -->
-    <section class="cta">
-        <div class="cta-container">
-            <div class="cta-box">
-                <h2 class="cta-title">Women's Thermal Tank Tops</h2>
-                <p class="cta-subtitle">Dapatkan kenyamanan dan kehangatan sempurna dengan diskon 49% hari ini saja!</p>
+    <section class="cta-section" id="order">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Jangan Lewatkan Kesempatan Ini!</h2>
+                <p>Dapatkan Mid-Length Fleece Trench Coat dengan diskon 49% hanya hari ini. Stok terbatas!</p>
                 
-                <div class="price">
-                    <div class="current-price">Rp160.000</div>
-                    <div class="original-price">Rp318.400</div>
+                <div class="price" style="justify-content: center; margin-bottom: 30px;">
+                    <div class="current-price">Rp 185.000</div>
+                    <div class="original-price">Rp 362.000</div>
+                    <div class="discount-badge">DISKON 49%</div>
                 </div>
                 
-                <a href="https://nava.orderonline.id/womens-thermal-tank-tops" class="btn btn-large">BELI SEKARANG</a>
+                <div class="cta-buttons">
+                    <a href="https://nava.orderonline.id/mid-length-fleece-trench-coat" class="btn btn-primary pulse">Pesan Sekarang</a>
+                    <a href="#gallery" class="btn btn-secondary">Lihat Detail</a>
+                </div>
                 
-                <div class="payment-methods">
-                    <div class="payment-method">
-                        <i class="fab fa-cc-visa"></i> Visa
+                <div class="guarantee">
+                    <div class="guarantee-item">
+                        <div class="guarantee-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div>
+                            <h5>100% Original</h5>
+                            <p>Produk berkualitas premium</p>
+                        </div>
                     </div>
-                    <div class="payment-method">
-                        <i class="fab fa-cc-mastercard"></i> Mastercard
+                    <div class="guarantee-item">
+                        <div class="guarantee-icon">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <div>
+                            <h5>Gratis Ongkir</h5>
+                            <p>Seluruh Indonesia</p>
+                        </div>
                     </div>
-                    <div class="payment-method">
-                        <i class="fas fa-mobile-alt"></i> QRIS
-                    </div>
-                    <div class="payment-method">
-                        <i class="fas fa-university"></i> Transfer Bank
+                    <div class="guarantee-item">
+                        <div class="guarantee-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div>
+                            <h5>Garansi</h5>
+                            <p>Uang kembali jika tidak sesuai</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
-    <!-- Guarantee -->
-    <section class="guarantee">
-        <div class="guarantee-container">
-            <div class="guarantee-item">
-                <div class="guarantee-icon">
-                    <i class="fas fa-shield-alt"></i>
-                </div>
-                <div>
-                    <h3>Garansi 100%</h3>
-                    <p>Uang kembali jika produk tidak sesuai deskripsi</p>
-                </div>
-            </div>
-            
-            <div class="guarantee-item">
-                <div class="guarantee-icon">
-                    <i class="fas fa-truck"></i>
-                </div>
-                <div>
-                    <h3>Pengiriman Cepat</h3>
-                    <p>Proses order maksimal 1x24 jam</p>
-                </div>
-            </div>
-            
-            <div class="guarantee-item">
-                <div class="guarantee-icon">
-                    <i class="fas fa-headset"></i>
-                </div>
-                <div>
-                    <h3>Layanan Pelanggan</h3>
-                    <p>Siap membantu 24/7 via WhatsApp</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
+
     <!-- Footer -->
     <footer>
-        <div class="footer-container">
-            <div class="footer-links">
-                <a href="#">Tentang Kami</a>
-                <a href="#">Kebijakan Privasi</a>
-                <a href="#">Syarat & Ketentuan</a>
-                <a href="#">Kontak Kami</a>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Tentang Kami</h3>
+                    <p>NAVASTORE adalah toko online terpercaya yang menyediakan produk fashion berkualitas dengan harga terbaik.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Informasi</h3>
+                    <ul>
+                        <li><a href="#">Tentang Kami</a></li>
+                        <li><a href="#">Kebijakan Privasi</a></li>
+                        <li><a href="#">Syarat & Ketentuan</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Kontak Kami</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Bantuan</h3>
+                    <ul>
+                        <li><a href="#">Cara Pemesanan</a></li>
+                        <li><a href="#">Pengiriman</a></li>
+                        <li><a href="#">Pembayaran</a></li>
+                        <li><a href="#">Retur Produk</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Hubungi Kami</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> cs@navastore.com</li>
+                        <li><i class="fas fa-phone"></i> +62 812 3456 7890</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Jakarta, Indonesia</li>
+                    </ul>
+                </div>
             </div>
-            <div class="copyright">
-                &copy; 2023 ThermalTops. All Rights Reserved.
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 NAVASTORE. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
-    
+
     <!-- Floating CTA -->
-    <a href="https://nava.orderonline.id/womens-thermal-tank-tops" class="floating-cta" id="floatingCta">
-        <span>BELI SEKARANG</span>
-        <span class="floating-price">Rp160.000</span>
-    </a>
-    
+    <div class="floating-cta">
+        <a href="https://api.whatsapp.com/send?phone=6281234567890&text=Saya%20tertarik%20dengan%20Mid-Length%20Fleece%20Trench%20Coat" class="floating-btn whatsapp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://nava.orderonline.id/mid-length-fleece-trench-coat" class="floating-btn cart">
+            <i class="fas fa-shopping-cart"></i>
+            <div class="badge">12</div>
+        </a>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="imageModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <div class="modal-body">
+                <img src="" alt="Product Image" id="modalImage" style="width: 100%;">
+            </div>
+        </div>
+    </div>
+
     <script>
-        // Dynamic Counters
-        function updateCounters() {
-            // Random but realistic viewer count between 1200-1300
-            const viewerCount = Math.floor(Math.random() * 100) + 1200;
-            document.getElementById('viewer-count').textContent = viewerCount.toLocaleString();
-            
-            // Random sold count between 890-910
-            const soldCount = Math.floor(Math.random() * 20) + 890;
-            document.getElementById('sold-count').textContent = soldCount.toLocaleString();
-            
-            // Decreasing stock count
-            let stockCount = parseInt(document.getElementById('stock-count').textContent);
-            if (stockCount > 0) {
-                stockCount -= Math.floor(Math.random() * 3);
-                if (stockCount < 0) stockCount = 0;
-                document.getElementById('stock-count').textContent = stockCount;
-            }
-            
-            setTimeout(updateCounters, 5000); // Update every 5 seconds
-        }
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainMenu = document.getElementById('mainMenu');
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            mainMenu.classList.toggle('active');
+            this.innerHTML = mainMenu.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                if(this.getAttribute('href') === '#') return;
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if(mainMenu.classList.contains('active')) {
+                        mainMenu.classList.remove('active');
+                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                }
+            });
+        });
         
         // Countdown Timer
         function updateCountdown() {
@@ -1215,55 +1565,128 @@
             const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((diff % (1000 * 60)) / 1000);
             
-            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
-            
-            document.getElementById('urgency-hours').textContent = hours.toString().padStart(2, '0');
-            document.getElementById('urgency-minutes').textContent = minutes.toString().padStart(2, '0');
-            document.getElementById('urgency-seconds').textContent = seconds.toString().padStart(2, '0');
-            
-            setTimeout(updateCountdown, 1000);
+            document.getElementById('countdown-hours').textContent = String(Math.floor(hours)).padStart(2, '0');
+            document.getElementById('countdown-minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('countdown-seconds').textContent = String(seconds).padStart(2, '0');
         }
         
-        // Gallery Modal
-        const modal = document.getElementById('galleryModal');
-        const modalImg = document.getElementById('modalImage');
-        const galleryItems = document.querySelectorAll('.gallery-item img');
-        const closeBtn = document.getElementsByClassName('close')[0];
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
         
-        galleryItems.forEach(item => {
-            item.addEventListener('click', function() {
-                modal.style.display = 'block';
-                modalImg.src = this.src;
+        // Product Gallery Functions
+        function changeMainImage(src, thumbnail) {
+            document.getElementById('mainProductImage').src = src;
+            
+            // Update active thumbnail
+            document.querySelectorAll('.thumbnail').forEach(item => {
+                item.classList.remove('active');
             });
-        });
+            
+            thumbnail.classList.add('active');
+        }
         
-        closeBtn.addEventListener('click', function() {
-            modal.style.display = 'none';
-        });
+        function selectColor(element, color) {
+            document.querySelectorAll('.color-option').forEach(item => {
+                item.classList.remove('selected');
+            });
+            
+            element.classList.add('selected');
+            
+            // In a real implementation, you would change the product images based on color
+            // For demo, we'll just show an alert
+            alert('Warna ' + element.getAttribute('data-color') + ' dipilih!');
+        }
         
-        window.addEventListener('click', function(event) {
-            if (event.target == modal) {
-                modal.style.display = 'none';
-            }
-        });
+        function selectSize(element) {
+            document.querySelectorAll('.size-option').forEach(item => {
+                item.classList.remove('selected');
+            });
+            
+            element.classList.add('selected');
+        }
         
-        // Show Floating CTA when scrolled
-        window.addEventListener('scroll', function() {
-            const floatingCta = document.getElementById('floatingCta');
-            if (window.pageYOffset > 300) {
-                floatingCta.classList.add('show');
+        function changeQuantity(amount) {
+            const input = document.querySelector('.quantity-input');
+            let value = parseInt(input.value) + amount;
+            
+            if(value < 1) value = 1;
+            if(value > 10) value = 10;
+            
+            input.value = value;
+        }
+        
+        // Accordion Function
+        function toggleAccordion(header) {
+            const item = header.parentElement;
+            const content = header.nextElementSibling;
+            
+            if(item.classList.contains('active')) {
+                item.classList.remove('active');
+                content.style.maxHeight = null;
             } else {
-                floatingCta.classList.remove('show');
+                document.querySelectorAll('.accordion-item').forEach(accordion => {
+                    accordion.classList.remove('active');
+                    accordion.querySelector('.accordion-content').style.maxHeight = null;
+                });
+                
+                item.classList.add('active');
+                content.style.maxHeight = content.scrollHeight + 'px';
+            }
+        }
+        
+        // Modal Functions
+        function openModal(src) {
+            document.getElementById('modalImage').src = src;
+            document.getElementById('imageModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeModal() {
+            document.getElementById('imageModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Zoom functionality for main product image
+        document.getElementById('mainProductImage').addEventListener('click', function() {
+            openModal(this.src);
+        });
+        
+        // Sticky Header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if(window.scrollY > 100) {
+                header.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+            } else {
+                header.style.boxShadow = '0 1px 3px rgba(0,0,0,0.12)';
             }
         });
         
-        // Initialize
-        document.addEventListener('DOMContentLoaded', function() {
-            updateCounters();
-            updateCountdown();
+        // Initialize accordions to be closed
+        document.querySelectorAll('.accordion-item').forEach(item => {
+            item.querySelector('.accordion-content').style.maxHeight = null;
         });
+        
+        // Exit Intent Popup
+        let mouseY = 0;
+        document.addEventListener('mouseout', function(e) {
+            if(!e.relatedTarget && e.clientY - mouseY <= 0) {
+                // Show exit intent popup
+                alert('Tunggu! Dapatkan diskon tambahan 10% dengan kode NAVALOVE untuk pembelian hari ini!');
+            }
+        });
+        
+        document.addEventListener('mousemove', function(e) {
+            mouseY = e.clientY;
+        });
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
     </script>
 </body>
 </html>
