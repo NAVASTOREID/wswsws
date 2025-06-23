@@ -7,176 +7,180 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            scroll-behavior: smooth;
-        }
-        
         .gradient-bg {
-            background: linear-gradient(135deg, #f5f7fa 0%, #e4efe9 100%);
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
         }
-        
-        .earth-tone-bg {
-            background: linear-gradient(to right, #8B5A2B, #A67C52, #C4A484);
+        .product-gradient {
+            background: linear-gradient(to right, #8e9eab, #eef2f3);
         }
-        
-        .product-shadow {
-            box-shadow: 0 10px 30px rgba(139, 90, 43, 0.2);
+        .earth-gradient {
+            background: linear-gradient(to right, #d5cea3, #bcb88a);
         }
-        
         .pulse-animation {
             animation: pulse 2s infinite;
         }
-        
         @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
-            100% {
-                transform: scale(1);
-            }
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
         }
-        
-        .popup {
-            animation: popup 0.5s ease-out;
+        .floating {
+            animation: floating 3s ease-in-out infinite;
         }
-        
-        @keyframes popup {
-            0% {
-                transform: scale(0.5);
-                opacity: 0;
-            }
-            100% {
-                transform: scale(1);
-                opacity: 1;
-            }
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
         }
-        
         .gallery-item {
             transition: all 0.3s ease;
         }
-        
         .gallery-item:hover {
             transform: scale(1.03);
-        }
-        
-        .countdown-box {
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
     </style>
 </head>
-<body class="gradient-bg">
-    <!-- Auto Popup -->
-    <div id="popup" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden">
-        <div class="bg-white rounded-lg p-6 max-w-md mx-4 popup relative">
+<body class="font-sans bg-gray-50">
+    <!-- Popup Modal -->
+    <div id="popupModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden">
+        <div class="bg-white rounded-lg p-6 max-w-md mx-4 relative">
             <button id="closePopup" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700">
                 <i class="fas fa-times"></i>
             </button>
             <div class="text-center">
-                <h3 class="text-xl font-bold text-gray-800 mb-2">PROMO KHUSUS HARI INI!</h3>
-                <p class="text-gray-600 mb-4">Dapatkan diskon 45% untuk pembelian Plant Extract Hair Coloring Cream. Penawaran terbatas!</p>
-                <a href="#order" class="bg-amber-700 hover:bg-amber-800 text-white font-bold py-2 px-6 rounded-full inline-block transition duration-300">
-                    PESAN SEKARANG
+                <h3 class="text-xl font-bold text-gray-800 mb-2">🔥 PROMO TERBATAS! 🔥</h3>
+                <p class="text-gray-600 mb-4">Dapatkan diskon 45% untuk pembelian hari ini saja!</p>
+                <div class="flex justify-center mb-4">
+                    <div class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-semibold">
+                        <span id="popupCountdown">00:15:00</span> tersisa!
+                    </div>
+                </div>
+                <a href="https://nava.orderonline.id/plant-extract-hair-coloring-cream" class="bg-gradient-to-r from-red-500 to-orange-500 text-white font-bold py-3 px-6 rounded-full inline-block hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+                    PESAN SEKARANG <i class="fas fa-arrow-right ml-2"></i>
                 </a>
             </div>
         </div>
     </div>
 
     <!-- Header -->
-    <header class="earth-tone-bg text-white py-4 shadow-md">
-        <div class="container mx-auto px-4 flex justify-between items-center">
+    <header class="gradient-bg shadow-sm sticky top-0 z-40">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
             <div class="flex items-center">
-                <img src="https://static.compgoo.com/c479e/bf283f26b6e55c310dbdb19fddcffe61.gif" alt="Logo" class="h-12 w-12 rounded-full object-cover">
-                <h1 class="ml-3 text-xl font-bold">PLANT EXTRACT</h1>
+                <img src="https://static.compgoo.com/c479e/b31835f8c9fef4fd7ae3db454d893316.gif" alt="Logo" class="h-12 mr-2">
+                <span class="text-xl font-bold text-gray-800">PLANT EXTRACT</span>
             </div>
             <div class="hidden md:flex space-x-6">
-                <a href="#features" class="hover:text-amber-200 transition">Fitur</a>
-                <a href="#gallery" class="hover:text-amber-200 transition">Galeri</a>
-                <a href="#testimonials" class="hover:text-amber-200 transition">Testimoni</a>
-                <a href="#faq" class="hover:text-amber-200 transition">FAQ</a>
+                <a href="#features" class="text-gray-700 hover:text-orange-500 font-medium">Keunggulan</a>
+                <a href="#gallery" class="text-gray-700 hover:text-orange-500 font-medium">Galeri</a>
+                <a href="#testimonials" class="text-gray-700 hover:text-orange-500 font-medium">Testimoni</a>
+                <a href="#faq" class="text-gray-700 hover:text-orange-500 font-medium">FAQ</a>
             </div>
             <div class="md:hidden">
-                <button id="menuBtn" class="text-white focus:outline-none">
+                <button id="menuBtn" class="text-gray-700">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
             </div>
         </div>
         
         <!-- Mobile Menu -->
-        <div id="mobileMenu" class="hidden md:hidden bg-amber-900 absolute w-full left-0 mt-2 z-10">
-            <div class="container mx-auto px-4 py-3">
-                <a href="#features" class="block py-2 hover:text-amber-200 transition">Fitur</a>
-                <a href="#gallery" class="block py-2 hover:text-amber-200 transition">Galeri</a>
-                <a href="#testimonials" class="block py-2 hover:text-amber-200 transition">Testimoni</a>
-                <a href="#faq" class="block py-2 hover:text-amber-200 transition">FAQ</a>
+        <div id="mobileMenu" class="hidden md:hidden bg-white shadow-lg absolute top-full left-0 right-0">
+            <div class="flex flex-col space-y-3 p-4">
+                <a href="#features" class="text-gray-700 hover:text-orange-500 font-medium py-2 border-b">Keunggulan</a>
+                <a href="#gallery" class="text-gray-700 hover:text-orange-500 font-medium py-2 border-b">Galeri</a>
+                <a href="#testimonials" class="text-gray-700 hover:text-orange-500 font-medium py-2 border-b">Testimoni</a>
+                <a href="#faq" class="text-gray-700 hover:text-orange-500 font-medium py-2 border-b">FAQ</a>
+                <a href="https://nava.orderonline.id/plant-extract-hair-coloring-cream" class="bg-orange-500 text-white font-medium py-2 px-4 rounded text-center">Pesan Sekarang</a>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="py-12 md:py-20">
+    <section class="product-gradient py-12 md:py-20">
         <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
-            <div class="md:w-1/2 mb-10 md:mb-0">
-                <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-                    Warna Rambut Sempurna <span class="text-amber-700">Tanpa Bahan Kimia Berbahaya</span>
+            <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                <div class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-semibold inline-block mb-4">
+                    DISKON 45% HARI INI SAJA!
+                </div>
+                <h1 class="text-3xl md:text-5xl font-bold text-gray-800 leading-tight mb-4">
+                    Warna Rambut Sempurna <span class="text-orange-500">Tanpa Bahan Kimia Berbahaya</span>
                 </h1>
                 <p class="text-lg text-gray-600 mb-6">
-                    Plant Extract Hair Coloring Cream - Solusi alami untuk menutupi uban dengan sempurna dan memberikan warna tahan lama tanpa merusak rambut Anda.
+                    Dengan cepat menutupi uban, mewarnai rambut hitam dan juga berperan dalam perawatan rambut. Formulanya lembut dan tidak merusak kualitas rambut dalam waktu lama.
                 </p>
                 
-                <div class="bg-amber-100 border-l-4 border-amber-600 p-4 mb-6">
-                    <p class="font-semibold text-amber-800">🔥 PROMO KHUSUS HARI INI! Diskon 45%</p>
-                    <div id="countdown" class="flex justify-center mt-3 space-x-2">
-                        <div class="countdown-box rounded p-2 text-center">
-                            <div class="font-bold text-xl text-amber-800" id="hours">00</div>
-                            <div class="text-xs text-amber-700">Jam</div>
+                <div class="flex items-center mb-6">
+                    <div class="mr-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-star text-yellow-400 mr-1"></i>
+                            <i class="fas fa-star text-yellow-400 mr-1"></i>
+                            <i class="fas fa-star text-yellow-400 mr-1"></i>
+                            <i class="fas fa-star text-yellow-400 mr-1"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
                         </div>
-                        <div class="countdown-box rounded p-2 text-center">
-                            <div class="font-bold text-xl text-amber-800" id="minutes">00</div>
-                            <div class="text-xs text-amber-700">Menit</div>
+                        <span class="text-sm text-gray-600">4.9/5 dari 2.357 review</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-users text-blue-500 mr-2"></i>
+                        <span class="text-sm text-gray-600">10.000+ pelanggan puas</span>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md p-4 mb-6">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="font-semibold">Penawaran Terbatas:</span>
+                        <div class="bg-red-100 text-red-800 px-2 py-1 rounded-full text-xs font-semibold">
+                            <i class="fas fa-clock mr-1"></i>
+                            <span id="countdown">00:15:00</span>
                         </div>
-                        <div class="countdown-box rounded p-2 text-center">
-                            <div class="font-bold text-xl text-amber-800" id="seconds">00</div>
-                            <div class="text-xs text-amber-700">Detik</div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="font-medium">1 Pcs</span>
+                                <span class="text-sm text-gray-500 line-through ml-2">Rp 276.000</span>
+                            </div>
+                            <span class="font-bold text-orange-500">Rp 152.000</span>
+                        </div>
+                        <div class="flex justify-between items-center bg-orange-50 p-2 rounded">
+                            <div>
+                                <span class="font-medium">3 Pcs</span>
+                                <span class="text-sm text-gray-500 line-through ml-2">Rp 828.000</span>
+                            </div>
+                            <span class="font-bold text-orange-500">Rp 162.000</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="font-medium">5 Pcs</span>
+                                <span class="text-sm text-gray-500 line-through ml-2">Rp 1.380.000</span>
+                            </div>
+                            <span class="font-bold text-orange-500">Rp 174.000</span>
                         </div>
                     </div>
                 </div>
                 
-                <ul class="mb-6 space-y-2">
-                    <li class="flex items-center">
-                        <i class="fas fa-check-circle text-amber-600 mr-2"></i>
-                        <span>Menutupi uban dengan sempurna</span>
-                    </li>
-                    <li class="flex items-center">
-                        <i class="fas fa-check-circle text-amber-600 mr-2"></i>
-                        <span>Warna tahan lama, tidak mudah luntur</span>
-                    </li>
-                    <li class="flex items-center">
-                        <i class="fas fa-check-circle text-amber-600 mr-2"></i>
-                        <span>Formula lembut tanpa bau tajam</span>
-                    </li>
-                    <li class="flex items-center">
-                        <i class="fas fa-check-circle text-amber-600 mr-2"></i>
-                        <span>Perawatan rambut sekaligus mewarnai</span>
-                    </li>
-                </ul>
-                
-                <a href="#order" class="bg-amber-700 hover:bg-amber-800 text-white font-bold py-3 px-8 rounded-full inline-block transition duration-300 pulse-animation">
+                <a href="https://nava.orderonline.id/plant-extract-hair-coloring-cream" class="bg-gradient-to-r from-orange-500 to-red-500 text-white font-bold py-4 px-8 rounded-full inline-block hover:shadow-lg transition-all duration-300 transform hover:scale-105 pulse-animation">
                     <i class="fas fa-shopping-cart mr-2"></i> PESAN SEKARANG
                 </a>
+                
+                <div class="flex items-center mt-4 text-sm text-gray-600">
+                    <i class="fas fa-shield-alt text-green-500 mr-2"></i>
+                    <span>Garansi 100% uang kembali jika tidak puas</span>
+                </div>
             </div>
             
-            <div class="md:w-1/2 flex justify-center">
-                <div class="relative">
-                    <img src="https://static.compgoo.com/c479e/8203b0a2423847c1b65a17b7387eb9ed.640x1000.jpg" alt="Plant Extract Hair Coloring Cream" class="rounded-lg product-shadow max-w-xs md:max-w-md">
-                    <div class="absolute -bottom-5 -right-5 bg-amber-700 text-white py-2 px-4 rounded-full font-bold">
-                        DISKON 45%
+            <div class="md:w-1/2 relative">
+                <div class="floating">
+                    <img src="https://static.compgoo.com/c479e/8203b0a2423847c1b65a17b7387eb9ed.640x1000.jpg" alt="Plant Extract Hair Coloring Cream" class="rounded-lg shadow-xl max-w-full h-auto mx-auto">
+                </div>
+                <div class="absolute -bottom-5 -left-5 bg-white p-3 rounded-full shadow-lg">
+                    <div class="bg-green-100 text-green-800 p-2 rounded-full">
+                        <i class="fas fa-leaf text-xl"></i>
+                    </div>
+                </div>
+                <div class="absolute -top-5 -right-5 bg-white p-3 rounded-full shadow-lg">
+                    <div class="bg-blue-100 text-blue-800 p-2 rounded-full">
+                        <i class="fas fa-certificate text-xl"></i>
                     </div>
                 </div>
             </div>
@@ -184,530 +188,612 @@
     </section>
 
     <!-- Trust Badges -->
-    <section class="py-8 bg-white">
+    <section class="bg-white py-8">
         <div class="container mx-auto px-4">
             <div class="flex flex-wrap justify-center items-center gap-6 md:gap-12">
                 <div class="flex items-center">
-                    <i class="fas fa-check-circle text-amber-600 text-2xl mr-2"></i>
-                    <span>100% Bahan Alami</span>
+                    <i class="fas fa-check-circle text-green-500 text-2xl mr-2"></i>
+                    <span class="font-medium">100% Bahan Alami</span>
                 </div>
                 <div class="flex items-center">
-                    <i class="fas fa-check-circle text-amber-600 text-2xl mr-2"></i>
-                    <span>Aman untuk Rambut</span>
+                    <i class="fas fa-check-circle text-green-500 text-2xl mr-2"></i>
+                    <span class="font-medium">Tanpa Efek Samping</span>
                 </div>
                 <div class="flex items-center">
-                    <i class="fas fa-check-circle text-amber-600 text-2xl mr-2"></i>
-                    <span>Garansi Kepuasan</span>
+                    <i class="fas fa-check-circle text-green-500 text-2xl mr-2"></i>
+                    <span class="font-medium">Tahan Lama</span>
                 </div>
                 <div class="flex items-center">
-                    <i class="fas fa-check-circle text-amber-600 text-2xl mr-2"></i>
-                    <span>Pengiriman Cepat</span>
+                    <i class="fas fa-check-circle text-green-500 text-2xl mr-2"></i>
+                    <span class="font-medium">Aman untuk Ibu Hamil</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Features Section -->
-    <section id="features" class="py-16 bg-white">
+    <section id="features" class="py-12 md:py-20 bg-gray-50">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Keunggulan <span class="text-amber-700">Plant Extract Hair Coloring Cream</span></h2>
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Keunggulan <span class="text-orange-500">Plant Extract Hair Coloring Cream</span></h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Solusi sempurna untuk rambut beruban dan warna rambut yang tahan lama tanpa merusak kesehatan rambut Anda.</p>
+            </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="bg-gray-50 p-6 rounded-lg text-center hover:shadow-lg transition">
-                    <div class="bg-amber-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
-                        <i class="fas fa-leaf text-amber-700 text-2xl"></i>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://static.compgoo.com/ueditor/autoLoad/ece1f3a6ab26ca931e59f72577c42c2f63251511322421005520852EN1c81e728d9d4c2f636f067f89cc14862c.gif" alt="Feature 1" class="w-full h-full object-cover">
                     </div>
-                    <h3 class="font-bold text-lg mb-2">Ekstrak Alami</h3>
-                    <p class="text-gray-600">Diformulasikan dengan ekstrak tumbuhan alami yang aman untuk rambut dan kulit kepala.</p>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-orange-100 text-orange-500 p-2 rounded-full mr-3">
+                                <i class="fas fa-magic text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-800">Hasil Instan</h3>
+                        </div>
+                        <p class="text-gray-600">Dapatkan warna rambut sempurna hanya dalam 15 menit tanpa perlu ke salon. Mudah digunakan di rumah dengan hasil seperti profesional.</p>
+                    </div>
                 </div>
                 
-                <div class="bg-gray-50 p-6 rounded-lg text-center hover:shadow-lg transition">
-                    <div class="bg-amber-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
-                        <i class="fas fa-clock text-amber-700 text-2xl"></i>
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://pic.compgoo.com/ueditor/autoLoad/d5b1dbdfdb90b5b1790a3dc0430dab3b63251511322421005520852EN2953c63b37f046860033bb652a63c24e6.jpg" alt="Feature 2" class="w-full h-full object-cover">
                     </div>
-                    <h3 class="font-bold text-lg mb-2">Tahan Lama</h3>
-                    <p class="text-gray-600">Warna rambut tetap cerah dan tidak mudah luntur hingga 8 minggu.</p>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-green-100 text-green-500 p-2 rounded-full mr-3">
+                                <i class="fas fa-leaf text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-800">Bahan Alami</h3>
+                        </div>
+                        <p class="text-gray-600">Formulasi dengan ekstrak tumbuhan alami yang lembut di rambut, tidak mengandung amonia atau bahan kimia berbahaya lainnya.</p>
+                    </div>
                 </div>
                 
-                <div class="bg-gray-50 p-6 rounded-lg text-center hover:shadow-lg transition">
-                    <div class="bg-amber-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
-                        <i class="fas fa-spa text-amber-700 text-2xl"></i>
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://static.compgoo.com/ueditor/autoLoad/82d396708efa15a9118e8980d7881f7063251511322421005520852EN1a87ff679a2f3e71d9181a67b7542122c.gif" alt="Feature 3" class="w-full h-full object-cover">
                     </div>
-                    <h3 class="font-bold text-lg mb-2">Perawatan Rambut</h3>
-                    <p class="text-gray-600">Tidak hanya mewarnai tetapi juga merawat rambut agar tetap sehat dan berkilau.</p>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-blue-100 text-blue-500 p-2 rounded-full mr-3">
+                                <i class="fas fa-clock text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-800">Tahan Lama</h3>
+                        </div>
+                        <p class="text-gray-600">Warna tidak mudah luntur meski setelah berkali-kali keramas. Kilau seperti cermin yang bertahan hingga 8 minggu.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-md flex">
+                    <div class="bg-purple-100 text-purple-500 p-3 rounded-full h-12 w-12 flex items-center justify-center mr-4 flex-shrink-0">
+                        <i class="fas fa-user-shield text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Aman untuk Kulit Sensitif</h3>
+                        <p class="text-gray-600">Diformulasikan khusus untuk kulit kepala sensitif, tidak menyebabkan iritasi atau gatal-gatal seperti produk pewarna rambut konvensional.</p>
+                    </div>
                 </div>
                 
-                <div class="bg-gray-50 p-6 rounded-lg text-center hover:shadow-lg transition">
-                    <div class="bg-amber-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
-                        <i class="fas fa-home text-amber-700 text-2xl"></i>
+                <div class="bg-white p-6 rounded-xl shadow-md flex">
+                    <div class="bg-pink-100 text-pink-500 p-3 rounded-full h-12 w-12 flex items-center justify-center mr-4 flex-shrink-0">
+                        <i class="fas fa-spa text-xl"></i>
                     </div>
-                    <h3 class="font-bold text-lg mb-2">Praktis di Rumah</h3>
-                    <p class="text-gray-600">Mudah digunakan sendiri di rumah tanpa perlu ke salon.</p>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Perawatan Rambut</h3>
+                        <p class="text-gray-600">Tidak hanya mewarnai, tetapi juga memberikan nutrisi pada rambut dengan kandungan vitamin E dan minyak argan untuk rambut lebih sehat.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-md flex">
+                    <div class="bg-yellow-100 text-yellow-500 p-3 rounded-full h-12 w-12 flex items-center justify-center mr-4 flex-shrink-0">
+                        <i class="fas fa-wind text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Aroma Menyenangkan</h3>
+                        <p class="text-gray-600">Tidak seperti produk pewarna rambut lain yang baunya menyengat, produk kami memiliki aroma bunga yang lembut dan menyenangkan.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-md flex">
+                    <div class="bg-red-100 text-red-500 p-3 rounded-full h-12 w-12 flex items-center justify-center mr-4 flex-shrink-0">
+                        <i class="fas fa-heart text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Cocok untuk Semua Usia</h3>
+                        <p class="text-gray-600">Aman digunakan oleh remaja hingga lansia, baik untuk menutupi uban atau sekadar mengubah warna rambut sesuai gaya.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Gallery Section -->
-    <section id="gallery" class="py-16 bg-gray-50">
+    <section id="gallery" class="py-12 md:py-20 bg-white">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Hasil yang <span class="text-amber-700">Mengejutkan</span></h2>
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Hasil Nyata <span class="text-orange-500">Plant Extract Hair Coloring Cream</span></h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Lihat transformasi rambut dari pelanggan kami yang sudah merasakan manfaatnya.</p>
+            </div>
             
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="gallery-item">
-                    <img src="https://static.compgoo.com/ueditor/autoLoad/d5b1dbdfdb90b5b1790a3dc0430dab3b63251511322421005520852EN2953c63b37f046860033bb652a63c24e6.jpg?_t=1750667254&_s=a8c2de140b01a8856dc9855ec8740c38&_token=57343049327a07d512edbbf28336c767&_e=10&_c=f9b8efaafd49371bc874f6b5e3c46375" alt="Before After" class="rounded-lg w-full h-auto shadow-md">
+                <div class="gallery-item rounded-xl overflow-hidden shadow-md hover:shadow-lg">
+                    <img src="https://static.compgoo.com/c479e/bf283f26b6e55c310dbdb19fddcffe61.gif" alt="Gallery 1" class="w-full h-64 object-cover">
+                    <div class="p-4 bg-white">
+                        <h3 class="font-semibold text-gray-800">Before & After</h3>
+                        <p class="text-sm text-gray-600">Transformasi rambut beruban dalam 15 menit</p>
+                    </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://static.compgoo.com/ueditor/autoLoad/ece1f3a6ab26ca931e59f72577c42c2f63251511322421005520852EN1c81e728d9d4c2f636f067f89cc14862c.gif" alt="Hair Coloring Process" class="rounded-lg w-full h-auto shadow-md">
+                
+                <div class="gallery-item rounded-xl overflow-hidden shadow-md hover:shadow-lg">
+                    <img src="https://static.compgoo.com/c479e/f86576bd1668f4e42083a3371913bce6.640x1000.jpg" alt="Gallery 2" class="w-full h-64 object-cover">
+                    <div class="p-4 bg-white">
+                        <h3 class="font-semibold text-gray-800">Kilau Alami</h3>
+                        <p class="text-sm text-gray-600">Rambut berkilau seperti baru dari salon</p>
+                    </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://static.compgoo.com/c479e/b31835f8c9fef4fd7ae3db454d893316.gif" alt="Hair Result" class="rounded-lg w-full h-auto shadow-md">
+                
+                <div class="gallery-item rounded-xl overflow-hidden shadow-md hover:shadow-lg">
+                    <img src="https://pic.compgoo.com/ueditor/autoLoad/0a248c8e66770b4af4f767b477bc3cde63251511322421005520852EN24619445188371e1cfe34593d015c1b98.gif" alt="Gallery 3" class="w-full h-64 object-cover">
+                    <div class="p-4 bg-white">
+                        <h3 class="font-semibold text-gray-800">Warna Merata</h3>
+                        <p class="text-sm text-gray-600">Hasil warna yang sempurna di seluruh bagian rambut</p>
+                    </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://static.compgoo.com/c479e/f86576bd1668f4e42083a3371913bce6.640x1000.jpg" alt="Product Close Up" class="rounded-lg w-full h-auto shadow-md">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://static.compgoo.com/ueditor/autoLoad/82d396708efa15a9118e8980d7881f7063251511322421005520852EN1a87ff679a2f3e71d9181a67b7542122c.gif" alt="Hair Shine" class="rounded-lg w-full h-auto shadow-md">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://pic.compgoo.com/ueditor/autoLoad/0a248c8e66770b4af4f767b477bc3cde63251511322421005520852EN24619445188371e1cfe34593d015c1b98.gif?_t=1750667254&_s=1fdbec49594417693f964c6481235076&_token=57343049327a07d512edbbf28336c767&_e=10&_c=4dfc3fa8d6c58b4f700f57ee8903c9a5" alt="Product Usage" class="rounded-lg w-full h-auto shadow-md">
-                </div>
+            </div>
+            
+            <div class="mt-8 text-center">
+                <a href="https://nava.orderonline.id/plant-extract-hair-coloring-cream" class="inline-flex items-center px-6 py-3 bg-orange-500 text-white font-medium rounded-full hover:bg-orange-600 transition-colors">
+                    <i class="fas fa-shopping-cart mr-2"></i> Saya Mau Hasil Seperti Ini!
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- How It Works -->
-    <section class="py-16 bg-white">
+    <!-- How to Use Section -->
+    <section class="py-12 md:py-20 bg-gray-50">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Cara Menggunakan <span class="text-amber-700">Sangat Mudah</span></h2>
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Cara Penggunaan <span class="text-orange-500">Yang Mudah</span></h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Hanya dalam 3 langkah sederhana, dapatkan rambut berwarna sempurna di rumah!</p>
+            </div>
             
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-8 md:mb-0">
-                    <img src="https://static.compgoo.com/ueditor/autoLoad/ece1f3a6ab26ca931e59f72577c42c2f63251511322421005520852EN1c81e728d9d4c2f636f067f89cc14862c.gif" alt="How to use" class="rounded-lg shadow-md">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="bg-white rounded-full h-24 w-24 flex items-center justify-center mx-auto mb-4 shadow-md">
+                        <span class="text-3xl font-bold text-orange-500">1</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Bersihkan Rambut</h3>
+                    <p class="text-gray-600">Cuci rambut dengan shampoo dan keringkan dengan handuk hingga lembab.</p>
                 </div>
-                <div class="md:w-1/2 md:pl-12">
-                    <div class="flex mb-6">
-                        <div class="bg-amber-700 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-4">1</div>
-                        <div>
-                            <h3 class="font-bold text-lg mb-1">Bersihkan Rambut</h3>
-                            <p class="text-gray-600">Cuci rambut dengan shampoo dan keringkan dengan handuk hingga lembab.</p>
-                        </div>
+                
+                <div class="text-center">
+                    <div class="bg-white rounded-full h-24 w-24 flex items-center justify-center mx-auto mb-4 shadow-md">
+                        <span class="text-3xl font-bold text-orange-500">2</span>
                     </div>
-                    
-                    <div class="flex mb-6">
-                        <div class="bg-amber-700 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-4">2</div>
-                        <div>
-                            <h3 class="font-bold text-lg mb-1">Aplikasikan Cream</h3>
-                            <p class="text-gray-600">Oleskan Plant Extract Hair Coloring Cream secara merata pada rambut.</p>
-                        </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Aplikasikan Krim</h3>
+                    <p class="text-gray-600">Oleskan krim secara merata ke rambut dengan kuas atau tangan (gunakan sarung tangan).</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-white rounded-full h-24 w-24 flex items-center justify-center mx-auto mb-4 shadow-md">
+                        <span class="text-3xl font-bold text-orange-500">3</span>
                     </div>
-                    
-                    <div class="flex mb-6">
-                        <div class="bg-amber-700 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-4">3</div>
-                        <div>
-                            <h3 class="font-bold text-lg mb-1">Diamkan</h3>
-                            <p class="text-gray-600">Biarkan selama 20-30 menit sesuai dengan intensitas warna yang diinginkan.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex">
-                        <div class="bg-amber-700 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-4">4</div>
-                        <div>
-                            <h3 class="font-bold text-lg mb-1">Bilas</h3>
-                            <p class="text-gray-600">Bilas dengan air bersih hingga bersih dan keringkan rambut.</p>
-                        </div>
-                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Diamkan & Bilas</h3>
+                    <p class="text-gray-600">Diamkan selama 15-20 menit, lalu bilas hingga bersih. Keringkan dan selesai!</p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section id="testimonials" class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Apa Kata <span class="text-amber-700">Pelanggan Kami</span></h2>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-xl mr-4">SW</div>
-                        <div>
-                            <h4 class="font-bold">Sarah W.</h4>
-                            <div class="flex text-amber-400">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
+            <div class="mt-12 bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/2">
+                        <img src="https://static.compgoo.com/c479e/b31835f8c9fef4fd7ae3db454d893316.gif" alt="How to use" class="w-full h-full object-cover">
+                    </div>
+                    <div class="md:w-1/2 p-8">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Tips untuk Hasil Terbaik</h3>
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span>Untuk rambut sangat tebal atau panjang, gunakan 2 sachet untuk hasil optimal</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span>Hindari keramas selama 24 jam setelah aplikasi untuk ketahanan warna maksimal</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span>Gunakan conditioner setelah membilas untuk kilau ekstra</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span>Simpan di tempat sejuk dan kering setelah dibuka</span>
+                            </li>
+                        </ul>
+                        
+                        <div class="mt-6 bg-yellow-50 border-l-4 border-yellow-400 p-4">
+                            <div class="flex">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-exclamation-triangle text-yellow-500 mt-1"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-sm text-yellow-700">
+                                        <span class="font-semibold">Perhatian:</span> Meskipun aman, selalu lakukan tes alergi di bagian kecil kulit sebelum penggunaan pertama.
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <p class="text-gray-600">"Saya sudah mencoba banyak produk pewarna rambut, tapi ini yang terbaik! Warnanya natural dan tidak merusak rambut saya yang sudah tipis. Uban tertutup sempurna!"</p>
-                </div>
-                
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-xl mr-4">DA</div>
-                        <div>
-                            <h4 class="font-bold">Dewi A.</h4>
-                            <div class="flex text-amber-400">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="text-gray-600">"Tidak seperti produk lain yang bau menyengat, ini baunya harum seperti herbal. Rambut saya jadi lembut dan berkilau setelah pakai ini. Sangat recommended!"</p>
-                </div>
-                
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-xl mr-4">RS</div>
-                        <div>
-                            <h4 class="font-bold">Rina S.</h4>
-                            <div class="flex text-amber-400">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="text-gray-600">"Awalnya ragu karena harganya lebih mahal dari produk biasa, tapi ternyata worth it! Warna tahan lama sampai 2 bulan dan rambut tidak kering. Sekarang tidak perlu ke salon lagi."</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Pricing Section -->
-    <section id="order" class="py-16 bg-amber-700 text-white">
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-12 md:py-20 bg-white">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-2">Pilih Paket <span class="text-amber-200">Terbaik Anda</span></h2>
-            <p class="text-center text-amber-100 mb-12">Diskon 45% berlaku untuk semua paket hari ini!</p>
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Apa Kata <span class="text-orange-500">Pelanggan Kami?</span></h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Ribuan wanita Indonesia sudah membuktikan keampuhan Plant Extract Hair Coloring Cream</p>
+            </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                <div class="bg-white text-gray-800 rounded-lg overflow-hidden shadow-xl">
-                    <div class="bg-amber-600 text-white py-4 text-center">
-                        <h3 class="font-bold text-xl">PAKET 1 PCS</h3>
-                    </div>
-                    <div class="p-6">
-                        <div class="text-center mb-6">
-                            <span class="line-through text-gray-500">Rp 276,000</span>
-                            <div class="text-3xl font-bold text-amber-700">Rp 152,000</div>
-                            <small class="text-gray-500">+ ongkir</small>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 rounded-xl p-6 shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="h-12 w-12 rounded-full bg-orange-100 text-orange-500 flex items-center justify-center mr-4">
+                            <span class="font-bold text-lg">DA</span>
                         </div>
-                        <ul class="mb-6 space-y-2">
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-amber-600 mr-2"></i>
-                                <span>1 Plant Extract Hair Coloring Cream</span>
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-amber-600 mr-2"></i>
-                                <span>Gratis panduan penggunaan</span>
-                            </li>
-                        </ul>
-                        <a href="https://nava.orderonline.id/plant-extract-hair-coloring-cream" class="block text-center bg-amber-700 hover:bg-amber-800 text-white font-bold py-3 px-6 rounded-full transition duration-300">
-                            PESAN SEKARANG
-                        </a>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Dewi Anggraeni</h4>
+                            <div class="flex items-center">
+                                <i class="fas fa-star text-yellow-400 text-sm mr-1"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm mr-1"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm mr-1"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm mr-1"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"Sebagai ibu rumah tangga dengan 3 anak, saya tidak punya waktu ke salon. Produk ini menyelamatkan saya! Uban saya yang memalukan hilang dalam 15 menit, dan warnanya tahan sampai 2 bulan."</p>
+                    <div class="flex items-center text-sm text-gray-500">
+                        <i class="fas fa-calendar-alt mr-2"></i>
+                        <span>12 Juni 2023</span>
                     </div>
                 </div>
                 
-                <div class="bg-white text-gray-800 rounded-lg overflow-hidden shadow-xl transform scale-105 relative">
-                    <div class="absolute top-0 right-0 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">POPULER</div>
-                    <div class="bg-amber-800 text-white py-4 text-center">
-                        <h3 class="font-bold text-xl">PAKET 3 PCS</h3>
-                    </div>
-                    <div class="p-6">
-                        <div class="text-center mb-6">
-                            <span class="line-through text-gray-500">Rp 828,000</span>
-                            <div class="text-3xl font-bold text-amber-700">Rp 162,000</div>
-                            <small class="text-gray-500">+ ongkir</small>
+                <div class="bg-gray-50 rounded-xl p-6 shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="h-12 w-12 rounded-full bg-green-100 text-green-500 flex items-center justify-center mr-4">
+                            <span class="font-bold text-lg">RW</span>
                         </div>
-                        <ul class="mb-6 space-y-2">
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-amber-600 mr-2"></i>
-                                <span>3 Plant Extract Hair Coloring Cream</span>
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-amber-600 mr-2"></i>
-                                <span>Gratis panduan penggunaan</span>
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-amber-600 mr-2"></i>
-                                <span>Bonus sisir rambut premium</span>
-                            </li>
-                        </ul>
-                        <a href="https://nava.orderonline.id/plant-extract-hair-coloring-cream" class="block text-center bg-amber-800 hover:bg-amber-900 text-white font-bold py-3 px-6 rounded-full transition duration-300">
-                            PESAN SEKARANG
-                        </a>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Rina Wijaya</h4>
+                            <div class="flex items-center">
+                                <i class="fas fa-star text-yellow-400 text-sm mr-1"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm mr-1"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm mr-1"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm mr-1"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"Saya alergi dengan pewarna rambut biasa yang membuat kulit kepala gatal. Tapi produk ini berbeda! Tidak gatal sama sekali dan baunya enak. Warna coklatnya natural banget, semua teman kantor pikir saya ke salon premium!"</p>
+                    <div class="flex items-center text-sm text-gray-500">
+                        <i class="fas fa-calendar-alt mr-2"></i>
+                        <span>28 Mei 2023</span>
                     </div>
                 </div>
                 
-                <div class="bg-white text-gray-800 rounded-lg overflow-hidden shadow-xl">
-                    <div class="bg-amber-600 text-white py-4 text-center">
-                        <h3 class="font-bold text-xl">PAKET 5 PCS</h3>
-                    </div>
-                    <div class="p-6">
-                        <div class="text-center mb-6">
-                            <span class="line-through text-gray-500">Rp 1,380,000</span>
-                            <div class="text-3xl font-bold text-amber-700">Rp 174,000</div>
-                            <small class="text-gray-500">+ ongkir</small>
+                <div class="bg-gray-50 rounded-xl p-6 shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="h-12 w-12 rounded-full bg-blue-100 text-blue-500 flex items-center justify-center mr-4">
+                            <span class="font-bold text-lg">SR</span>
                         </div>
-                        <ul class="mb-6 space-y-2">
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-amber-600 mr-2"></i>
-                                <span>5 Plant Extract Hair Coloring Cream</span>
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-amber-600 mr-2"></i>
-                                <span>Gratis panduan penggunaan</span>
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-amber-600 mr-2"></i>
-                                <span>Bonus sisir rambut premium</span>
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-amber-600 mr-2"></i>
-                                <span>Bonus shampoo perawatan</span>
-                            </li>
-                        </ul>
-                        <a href="https://nava.orderonline.id/plant-extract-hair-coloring-cream" class="block text-center bg-amber-700 hover:bg-amber-800 text-white font-bold py-3 px-6 rounded-full transition duration-300">
-                            PESAN SEKARANG
-                        </a>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Siti Rahayu</h4>
+                            <div class="flex items-center">
+                                <i class="fas fa-star text-yellow-400 text-sm mr-1"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm mr-1"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm mr-1"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm mr-1"></i>
+                                <i class="fas fa-star-half-alt text-yellow-400 text-sm"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"Sudah mencoba berbagai produk penutup uban tapi selalu membuat rambut kering. Plant Extract ini tidak hanya menutupi uban dengan sempurna, tapi juga membuat rambut saya lebih lembut dan berkilau. Worth every penny!"</p>
+                    <div class="flex items-center text-sm text-gray-500">
+                        <i class="fas fa-calendar-alt mr-2"></i>
+                        <span>15 April 2023</span>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Guarantee Section -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="bg-amber-50 border border-amber-200 rounded-lg p-8 md:p-12 max-w-4xl mx-auto">
-                <div class="flex flex-col md:flex-row items-center">
-                    <div class="md:w-1/3 mb-6 md:mb-0 flex justify-center">
-                        <div class="bg-amber-100 rounded-full w-32 h-32 flex items-center justify-center">
-                            <i class="fas fa-shield-alt text-amber-700 text-5xl"></i>
-                        </div>
-                    </div>
-                    <div class="md:w-2/3 md:pl-8">
-                        <h2 class="text-2xl font-bold text-gray-800 mb-4">Garansi <span class="text-amber-700">Kepuasan 100%</span></h2>
-                        <p class="text-gray-600 mb-4">Kami yakin Anda akan puas dengan hasil Plant Extract Hair Coloring Cream. Jika dalam 30 hari Anda tidak puas dengan produk kami, kami akan mengembalikan uang Anda tanpa pertanyaan.</p>
-                        <div class="flex items-center">
-                            <i class="fas fa-check-circle text-amber-700 mr-2"></i>
-                            <span class="font-medium">Garansi uang kembali</span>
-                        </div>
-                    </div>
-                </div>
+            
+            <div class="mt-12 bg-orange-50 rounded-xl p-8 text-center">
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">Masih Ragu?</h3>
+                <p class="text-lg text-gray-600 mb-6">Kami menawarkan garansi 100% uang kembali jika Anda tidak puas dengan hasilnya. Tidak ada risiko untuk mencoba!</p>
+                <a href="https://nava.orderonline.id/plant-extract-hair-coloring-cream" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-orange-500 to-red-500 text-white font-bold rounded-full hover:shadow-lg transition-all transform hover:scale-105">
+                    <i class="fas fa-hand-holding-usd mr-2"></i> COBA SEKARANG - RISIKO KAMI
+                </a>
             </div>
         </div>
     </section>
 
     <!-- FAQ Section -->
-    <section id="faq" class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4 max-w-3xl">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Pertanyaan yang <span class="text-amber-700">Sering Diajukan</span></h2>
-            
-            <div class="space-y-4">
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <button class="faq-question w-full text-left p-4 font-medium flex justify-between items-center">
-                        <span>Apa perbedaan produk ini dengan pewarna rambut biasa?</span>
-                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
-                    </button>
-                    <div class="faq-answer px-4 pb-4 hidden">
-                        <p class="text-gray-600">Plant Extract Hair Coloring Cream menggunakan bahan alami yang tidak merusak rambut, tidak mengandung ammonia atau bahan kimia berbahaya lainnya. Selain mewarnai, produk ini juga merawat rambut Anda dengan ekstrak tumbuhan alami.</p>
-                    </div>
-                </div>
-                
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <button class="faq-question w-full text-left p-4 font-medium flex justify-between items-center">
-                        <span>Berapa lama warna rambut akan bertahan?</span>
-                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
-                    </button>
-                    <div class="faq-answer px-4 pb-4 hidden">
-                        <p class="text-gray-600">Warna rambut akan bertahan hingga 8 minggu tergantung jenis rambut dan frekuensi keramas. Untuk hasil terbaik, gunakan shampoo khusus untuk rambut berwarna dan hindari paparan sinar matahari langsung dalam waktu lama.</p>
-                    </div>
-                </div>
-                
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <button class="faq-question w-full text-left p-4 font-medium flex justify-between items-center">
-                        <span>Apakah produk ini aman untuk ibu hamil dan menyusui?</span>
-                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
-                    </button>
-                    <div class="faq-answer px-4 pb-4 hidden">
-                        <p class="text-gray-600">Meskipun menggunakan bahan alami, kami menyarankan untuk berkonsultasi dengan dokter terlebih dahulu sebelum menggunakan produk ini jika Anda sedang hamil atau menyusui.</p>
-                    </div>
-                </div>
-                
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <button class="faq-question w-full text-left p-4 font-medium flex justify-between items-center">
-                        <span>Bagaimana cara mengetahui warna yang cocok untuk saya?</span>
-                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
-                    </button>
-                    <div class="faq-answer px-4 pb-4 hidden">
-                        <p class="text-gray-600">Kami menyediakan panduan pemilihan warna berdasarkan warna rambut asli Anda. Anda juga bisa menghubungi customer service kami untuk konsultasi gratis sebelum membeli.</p>
-                    </div>
-                </div>
-                
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <button class="faq-question w-full text-left p-4 font-medium flex justify-between items-center">
-                        <span>Berapa lama pengiriman biasanya?</span>
-                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
-                    </button>
-                    <div class="faq-answer px-4 pb-4 hidden">
-                        <p class="text-gray-600">Pengiriman biasanya memakan waktu 2-5 hari kerja tergantung lokasi pengiriman. Kami menggunakan jasa pengiriman terpercaya dan akan memberikan nomor resi yang bisa dilacak.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Shipping & Payment -->
-    <section class="py-16 bg-white">
+    <section id="faq" class="py-12 md:py-20 bg-gray-50">
         <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div>
-                    <h2 class="text-2xl font-bold text-gray-800 mb-6">Metode <span class="text-amber-700">Pengiriman</span></h2>
-                    <div class="space-y-4">
-                        <div class="flex items-start">
-                            <i class="fas fa-truck text-amber-700 mt-1 mr-3"></i>
-                            <div>
-                                <h4 class="font-medium">Pengiriman Cepat</h4>
-                                <p class="text-gray-600 text-sm">Kami bekerja sama dengan jasa pengiriman terbaik untuk memastikan produk sampai dengan cepat dan aman.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <i class="fas fa-map-marker-alt text-amber-700 mt-1 mr-3"></i>
-                            <div>
-                                <h4 class="font-medium">Lacak Pesanan</h4>
-                                <p class="text-gray-600 text-sm">Anda akan menerima nomor resi yang bisa dilacak status pengirimannya secara real-time.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <i class="fas fa-shield-alt text-amber-700 mt-1 mr-3"></i>
-                            <div>
-                                <h4 class="font-medium">Pengemasan Aman</h4>
-                                <p class="text-gray-600 text-sm">Produk dikemas dengan bahan khusus untuk mencegah kerusakan selama pengiriman.</p>
-                            </div>
-                        </div>
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Pertanyaan <span class="text-orange-500">Yang Sering Diajukan</span></h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Temukan jawaban atas pertanyaan umum seputar Plant Extract Hair Coloring Cream</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto space-y-4">
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <button class="faq-question flex justify-between items-center w-full p-6 text-left font-semibold text-gray-800 hover:bg-gray-50 transition-colors">
+                        <span>Berapa lama warna rambut bertahan?</span>
+                        <i class="fas fa-chevron-down text-orange-500 transition-transform"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 hidden">
+                        <p class="text-gray-600">Warna rambut dapat bertahan hingga 8 minggu tergantung jenis rambut dan frekuensi keramas. Untuk memperpanjang ketahanan warna, gunakan shampoo khusus rambut berwarna dan hindari keramas dengan air terlalu panas.</p>
                     </div>
                 </div>
                 
-                <div>
-                    <h2 class="text-2xl font-bold text-gray-800 mb-6">Metode <span class="text-amber-700">Pembayaran</span></h2>
-                    <div class="space-y-4">
-                        <div class="flex items-start">
-                            <i class="fas fa-credit-card text-amber-700 mt-1 mr-3"></i>
-                            <div>
-                                <h4 class="font-medium">Transfer Bank</h4>
-                                <p class="text-gray-600 text-sm">BCA, Mandiri, BNI, BRI, dan bank lainnya.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <i class="fas fa-mobile-alt text-amber-700 mt-1 mr-3"></i>
-                            <div>
-                                <h4 class="font-medium">E-Wallet</h4>
-                                <p class="text-gray-600 text-sm">OVO, Dana, Gopay, LinkAja, dan dompet digital lainnya.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <i class="fas fa-store text-amber-700 mt-1 mr-3"></i>
-                            <div>
-                                <h4 class="font-medium">COD (Cash On Delivery)</h4>
-                                <p class="text-gray-600 text-sm">Tersedia untuk beberapa area tertentu (konfirmasi dengan CS kami).</p>
-                            </div>
-                        </div>
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <button class="faq-question flex justify-between items-center w-full p-6 text-left font-semibold text-gray-800 hover:bg-gray-50 transition-colors">
+                        <span>Apakah aman untuk ibu hamil dan menyusui?</span>
+                        <i class="fas fa-chevron-down text-orange-500 transition-transform"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 hidden">
+                        <p class="text-gray-600">Ya, produk kami aman digunakan oleh ibu hamil dan menyusui karena tidak mengandung amonia, PPD, atau bahan kimia berbahaya lainnya. Namun, kami tetap menyarankan konsultasi dengan dokter terlebih dahulu jika Anda memiliki kondisi khusus.</p>
                     </div>
                 </div>
+                
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <button class="faq-question flex justify-between items-center w-full p-6 text-left font-semibold text-gray-800 hover:bg-gray-50 transition-colors">
+                        <span>Bagaimana cara memilih warna yang tepat?</span>
+                        <i class="fas fa-chevron-down text-orange-500 transition-transform"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 hidden">
+                        <p class="text-gray-600">Kami menyediakan panduan pemilihan warna berdasarkan warna rambut asli Anda. Secara umum, untuk rambut hitam alami, warna coklat gelap atau hitam memberikan hasil terbaik. Jika Anda ingin perubahan lebih dramatis, mungkin perlu beberapa aplikasi bertahap.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <button class="faq-question flex justify-between items-center w-full p-6 text-left font-semibold text-gray-800 hover:bg-gray-50 transition-colors">
+                        <span>Apakah bisa digunakan pada rambut yang sudah diwarnai sebelumnya?</span>
+                        <i class="fas fa-chevron-down text-orange-500 transition-transform"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 hidden">
+                        <p class="text-gray-600">Ya, produk kami bisa digunakan pada rambut yang sudah diwarnai. Namun, hasil warna mungkin sedikit berbeda tergantung warna dasar sebelumnya. Untuk perubahan warna yang signifikan, mungkin diperlukan beberapa aplikasi.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <button class="faq-question flex justify-between items-center w-full p-6 text-left font-semibold text-gray-800 hover:bg-gray-50 transition-colors">
+                        <span>Berapa lama waktu pengiriman?</span>
+                        <i class="fas fa-chevron-down text-orange-500 transition-transform"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 hidden">
+                        <p class="text-gray-600">Kami melakukan pengiriman dalam 1-2 hari kerja setelah pembayaran dikonfirmasi. Waktu sampai tergantung lokasi Anda: Jabodetabek 1-3 hari, Jawa 2-4 hari, luar Jawa 3-7 hari kerja. Kami memberikan nomor resi yang bisa dilacak.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <p class="text-lg text-gray-600 mb-6">Masih ada pertanyaan? Tim kami siap membantu Anda!</p>
+                <a href="mailto:cs@plantextract.com" class="inline-flex items-center px-6 py-3 bg-orange-500 text-white font-medium rounded-full hover:bg-orange-600 transition-colors">
+                    <i class="fas fa-envelope mr-2 text-xl"></i> Email Kami
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="py-16 bg-amber-800 text-white">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-4">Masih Ragu Untuk Mencoba?</h2>
-            <p class="text-xl mb-8 text-amber-100 max-w-2xl mx-auto">Dengan garansi uang kembali 30 hari, Anda tidak memiliki alasan untuk tidak mencoba Plant Extract Hair Coloring Cream hari ini!</p>
+    <!-- Order Section -->
+    <section id="order" class="py-12 md:py-20 bg-gradient-to-b from-orange-50 to-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Pesan <span class="text-orange-500">Plant Extract Hair Coloring Cream</span> Sekarang!</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Jangan lewatkan penawaran spesial hari ini dengan diskon hingga 45%</p>
+            </div>
             
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#order" class="bg-white hover:bg-gray-100 text-amber-800 font-bold py-3 px-8 rounded-full inline-block transition duration-300">
-                    <i class="fas fa-shopping-cart mr-2"></i> PESAN SEKARANG
-                </a>
-                <a href="https://api.whatsapp.com/send?phone=6285236699497&text=Saya%20mau%20tanya%20tentang%20Plant%20Extract%20Hair%20Coloring%20Cream" class="bg-transparent hover:bg-amber-900 border-2 border-white text-white font-bold py-3 px-8 rounded-full inline-block transition duration-300">
-                    <i class="fas fa-comment-dots mr-2"></i> KONSULTASI GRATIS
-                </a>
+            <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-xl overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/2 p-8">
+                        <div class="flex justify-between items-center mb-6">
+                            <h3 class="text-2xl font-bold text-gray-800">Pilihan Paket</h3>
+                            <div class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-semibold">
+                                <i class="fas fa-clock mr-1"></i>
+                                <span id="orderCountdown">00:15:00</span>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-4 mb-8">
+                            <div class="border border-gray-200 rounded-lg p-4 hover:border-orange-300 transition-colors">
+                                <div class="flex items-start">
+                                    <input type="radio" id="package1" name="package" class="mt-1 mr-3" checked>
+                                    <label for="package1" class="flex-1">
+                                        <div class="flex justify-between items-center mb-1">
+                                            <span class="font-semibold text-gray-800">1 Pcs</span>
+                                            <div>
+                                                <span class="text-sm text-gray-500 line-through mr-2">Rp 276.000</span>
+                                                <span class="font-bold text-orange-500 text-lg">Rp 152.000</span>
+                                            </div>
+                                        </div>
+                                        <p class="text-sm text-gray-600">Cocok untuk mencoba produk pertama kali</p>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="border-2 border-orange-300 bg-orange-50 rounded-lg p-4">
+                                <div class="flex items-start">
+                                    <input type="radio" id="package2" name="package" class="mt-1 mr-3">
+                                    <label for="package2" class="flex-1">
+                                        <div class="flex justify-between items-center mb-1">
+                                            <div>
+                                                <span class="font-semibold text-gray-800">3 Pcs</span>
+                                                <span class="ml-2 bg-orange-500 text-white text-xs px-2 py-1 rounded">POPULER</span>
+                                            </div>
+                                            <div>
+                                                <span class="text-sm text-gray-500 line-through mr-2">Rp 828.000</span>
+                                                <span class="font-bold text-orange-500 text-lg">Rp 162.000</span>
+                                            </div>
+                                        </div>
+                                        <p class="text-sm text-gray-600">Hemat Rp 114.000 untuk pemakaian 3 bulan</p>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="border border-gray-200 rounded-lg p-4 hover:border-orange-300 transition-colors">
+                                <div class="flex items-start">
+                                    <input type="radio" id="package3" name="package" class="mt-1 mr-3">
+                                    <label for="package3" class="flex-1">
+                                        <div class="flex justify-between items-center mb-1">
+                                            <span class="font-semibold text-gray-800">5 Pcs</span>
+                                            <div>
+                                                <span class="text-sm text-gray-500 line-through mr-2">Rp 1.380.000</span>
+                                                <span class="font-bold text-orange-500 text-lg">Rp 174.000</span>
+                                            </div>
+                                        </div>
+                                        <p class="text-sm text-gray-600">Paling hemat untuk pemakaian jangka panjang</p>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+                            <div class="flex">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-truck text-blue-500 mt-1"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-sm text-blue-700">
+                                        <span class="font-semibold">Gratis Ongkir:</span> Untuk pembelian minimal 3 pcs ke seluruh Indonesia.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center text-sm text-gray-600 mb-6">
+                            <i class="fas fa-shield-alt text-green-500 mr-2"></i>
+                            <span>Garansi 100% uang kembali jika tidak puas dengan produk</span>
+                        </div>
+                    </div>
+                    
+                    <div class="md:w-1/2 bg-gray-50 p-8">
+                        <h3 class="text-xl font-bold text-gray-800 mb-6">Isi Data Pemesanan</h3>
+                        
+                        <form class="space-y-4">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nama Lengkap</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-orange-500" required>
+                            </div>
+                            
+                            <div>
+                                <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Nomor WhatsApp</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-orange-500" required>
+                            </div>
+                            
+                            <div>
+                                <label for="address" class="block text-sm font-medium text-gray-700 mb-1">Alamat Lengkap</label>
+                                <textarea id="address" rows="3" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-orange-500" required></textarea>
+                            </div>
+                            
+                            <div class="pt-4">
+                                <a href="https://nava.orderonline.id/plant-extract-hair-coloring-cream" class="w-full bg-gradient-to-r from-orange-500 to-red-500 text-white font-bold py-4 px-6 rounded-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center">
+                                    <i class="fas fa-paper-plane mr-2"></i> KIRIM PESANAN SEKARANG
+                                </a>
+                            </div>
+                        </form>
+                        
+                        <div class="mt-6 flex items-center justify-center">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/e/eb/Logo_BNI_46.png" alt="BNI" class="h-8 mx-2">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Bank_Central_Asia.svg" alt="BCA" class="h-8 mx-2">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/72/Logo_BRI.svg" alt="BRI" class="h-8 mx-2">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/77/Logo_Mandiri.svg" alt="Mandiri" class="h-8 mx-2">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
+    <footer class="bg-gray-800 text-white py-12">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
                     <h3 class="text-xl font-bold mb-4">PLANT EXTRACT</h3>
-                    <p class="text-gray-400">Solusi alami untuk rambut beruban dengan warna tahan lama dan perawatan rambut sekaligus.</p>
-                </div>
-                
-                <div>
-                    <h4 class="font-bold mb-4">Tautan Cepat</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#features" class="text-gray-400 hover:text-white transition">Fitur Produk</a></li>
-                        <li><a href="#gallery" class="text-gray-400 hover:text-white transition">Galeri</a></li>
-                        <li><a href="#testimonials" class="text-gray-400 hover:text-white transition">Testimoni</a></li>
-                        <li><a href="#faq" class="text-gray-400 hover:text-white transition">FAQ</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="font-bold mb-4">Kontak Kami</h4>
-                    <ul class="space-y-2">
-                        <li class="flex items-center">
-                            <i class="fas fa-phone-alt mr-2 text-gray-400"></i>
-                            <span>0812-3456-7890</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-envelope mr-2 text-gray-400"></i>
-                            <span>cs@plantextract.com</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-map-marker-alt mr-2 text-gray-400"></i>
-                            <span>Jakarta, Indonesia</span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="font-bold mb-4">Media Sosial</h4>
+                    <p class="text-gray-400 mb-4">Solusi alami untuk rambut beruban dan warna rambut tahan lama tanpa bahan kimia berbahaya.</p>
                     <div class="flex space-x-4">
-                        <a href="#" class="bg-gray-800 hover:bg-gray-700 w-10 h-10 rounded-full flex items-center justify-center transition">
-                            <i class="fab fa-facebook-f"></i>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-facebook-f text-xl"></i>
                         </a>
-                        <a href="#" class="bg-gray-800 hover:bg-gray-700 w-10 h-10 rounded-full flex items-center justify-center transition">
-                            <i class="fab fa-instagram"></i>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-instagram text-xl"></i>
                         </a>
-                        <a href="#" class="bg-gray-800 hover:bg-gray-700 w-10 h-10 rounded-full flex items-center justify-center transition">
-                            <i class="fab fa-youtube"></i>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-tiktok text-xl"></i>
                         </a>
-                        <a href="#" class="bg-gray-800 hover:bg-gray-700 w-10 h-10 rounded-full flex items-center justify-center transition">
-                            <i class="fab fa-tiktok"></i>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-youtube text-xl"></i>
                         </a>
                     </div>
                 </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Tautan Cepat</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#features" class="text-gray-400 hover:text-white transition-colors">Keunggulan Produk</a></li>
+                        <li><a href="#gallery" class="text-gray-400 hover:text-white transition-colors">Galeri Hasil</a></li>
+                        <li><a href="#testimonials" class="text-gray-400 hover:text-white transition-colors">Testimoni</a></li>
+                        <li><a href="#faq" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+                        <li><a href="#order" class="text-gray-400 hover:text-white transition-colors">Cara Pesan</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Bantuan</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Kebijakan Privasi</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Syarat & Ketentuan</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Pengembalian Produk</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Status Pengiriman</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Hubungi Kami</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Kontak Kami</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3"></i>
+                            <span>Jl. Kemang Raya No.12, Jakarta Selatan, Indonesia</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3"></i>
+                            <span>0812-3456-7890</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3"></i>
+                            <span>cs@plantextract.com</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3"></i>
+                            <span>cs@plantextract.com</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
             
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2023 Plant Extract Hair Coloring Cream. All Rights Reserved.</p>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Plant Extract Hair Coloring Cream. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Floating WhatsApp Button -->
-    <a href="https://api.whatsapp.com/send?phone=6281234567890&text=Saya%20mau%20tanya%20tentang%20Plant%20Extract%20Hair%20Coloring%20Cream" class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg z-40 transition">
-        <i class="fab fa-whatsapp text-2xl"></i>
+    <!-- Floating Contact Button -->
+    <a href="mailto:cs@plantextract.com" class="fixed bottom-6 right-6 bg-orange-500 text-white p-4 rounded-full shadow-lg hover:bg-orange-600 transition-colors z-50">
+        <i class="fas fa-envelope text-2xl"></i>
     </a>
 
     <script>
@@ -728,41 +814,54 @@
                 const icon = question.querySelector('i');
                 
                 answer.classList.toggle('hidden');
-                icon.classList.toggle('transform');
-                icon.classList.toggle('rotate-180');
+                icon.classList.toggle('fa-chevron-down');
+                icon.classList.toggle('fa-chevron-up');
             });
         });
         
         // Countdown Timer
         function updateCountdown() {
-            const now = new Date();
-            const endOfDay = new Date();
-            endOfDay.setHours(23, 59, 59, 999);
+            let timeLeft = 15 * 60; // 15 minutes in seconds
             
-            const diff = endOfDay - now;
+            const countdownElements = [
+                document.getElementById('countdown'),
+                document.getElementById('orderCountdown'),
+                document.getElementById('popupCountdown')
+            ];
             
-            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-            
-            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            const countdown = setInterval(() => {
+                const minutes = Math.floor(timeLeft / 60);
+                const seconds = timeLeft % 60;
+                
+                const formattedTime = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                
+                countdownElements.forEach(el => {
+                    if (el) el.textContent = formattedTime;
+                });
+                
+                if (timeLeft <= 0) {
+                    clearInterval(countdown);
+                    countdownElements.forEach(el => {
+                        if (el) el.textContent = "00:00";
+                    });
+                } else {
+                    timeLeft--;
+                }
+            }, 1000);
         }
         
         updateCountdown();
-        setInterval(updateCountdown, 1000);
         
         // Auto Popup
         setTimeout(() => {
-            document.getElementById('popup').classList.remove('hidden');
+            document.getElementById('popupModal').classList.remove('hidden');
         }, 5000);
         
         document.getElementById('closePopup').addEventListener('click', () => {
-            document.getElementById('popup').classList.add('hidden');
+            document.getElementById('popupModal').classList.add('hidden');
         });
         
-        // Smooth Scrolling
+        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -770,6 +869,9 @@
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
+                
+                // Close mobile menu if open
+                mobileMenu.classList.add('hidden');
             });
         });
     </script>
